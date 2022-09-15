@@ -1,0 +1,121 @@
+<app-client-header></app-client-header>
+<app-hero text="about fx journal"></app-hero>
+<section>
+    <div class="mt-[-2rem] mx-1 px-3 lg:mx-8 bg-white lg:px-8 py-8">
+        <h1 class="lg:text-4xl text-xl font-rubik font-bold  uppercase tracking-widest text-center"> Fx Journal</h1>
+        <p class="tracking-widest font-lato font-bold my-8"> Fx Journal is an online application for tracking all trades. The application is meant to help you become a stronger trader. Essentially, it is an online trading database for keeping records of what happened during a trade. You may include market condition, the size of the trade, expiration time, prices whether or not were successful and even note your emotion. </p>
+        <p class="tracking-widest font-lato font-bold my-8"> Fx Journal is a log that you can use to record your trades. Traders use a trading journal to reflect upon previous trades so that they may evaluate themselves. You can use journals to evaluate where you can improve your trading. They are a useful form of record keeping. Adroit-Fx Track can help you refine your strategies based on learning from previous experiences. Just as a business owner tracks inventory, a trader should also keep up with their closed positions</p>
+    </div>
+    <div class="bg-gray-shade-two w-full px-8 py-8">
+        <h1 class="lg:text-4xl text-xl font-rubik font-bold  uppercase tracking-widest text-center"> why client choose us</h1>
+        <section class="px-8 lg:py-32 lg:flex lg:items-center relative ">
+
+            <div class="flex justify-center mt-8 lg:mt-0 items-center lg:absolute lg:top-[2rem] lg:left-[50%] lg:translate-x-[-50%]" data-aos="fade-down">
+                <div >
+                    <img src="assets/images/moeny.svg" class="mx-auto" alt="money">
+                    <h1 class="text-center font-rubik font-medium mt-1 text-[18px]" [class.text-[#00c94c]]="isOverConsistency"> Bring Consistency </h1>
+                </div>
+            </div>
+        
+            <div class="flex justify-center mt-8 lg:mt-0 items-center  lg:absolute lg:top-[50%] lg:right-[20%] lg:translate-y-[-50%]">
+                <div >
+                    <img src="assets/images/leaderboard.svg" class="mx-auto" alt="money">
+                    <h1 class="text-center font-rubik font-medium mt-1 text-[18px]" [class.text-[#00c94c]]="isOverRisk"> Improve you risk <br> management </h1>
+                </div>
+            </div>
+        
+            <div class="flex justify-center mt-8 lg:mt-0 items-center  lg:absolute lg:top-[50%] lg:left-[20%] lg:translate-y-[-50%]">
+                <div >
+                    <img src="assets/images/querystart.svg" class="mx-auto" alt="money">
+                    <h1 class="text-center font-rubik font-medium mt-1 text-[18px]" [class.text-[#00c94c]]="isOverStrategy"> Strategy testing <br> management </h1>
+                </div>
+            </div>
+        
+            <div class="flex justify-center mt-8 lg:mt-0 items-center  lg:absolute lg:bottom-[-1rem] lg:left-[50%] lg:translate-x-[-50%]">
+                <div >
+                    <img src="assets/images/candlestick.svg" class="mx-auto" alt="money">
+                    <h1 class="text-center font-rubik font-medium mt-1 text-[18px]" [class.text-[#00c94c]]="isOverTool"> Our journal as  <br> planning tool </h1>
+                </div>
+            </div>
+        
+            <div class="hidden  h-[30rem] w-[30rem] mx-auto border-4 px-8 border-[#00c94c] rounded-full relative lg:flex justify-center items-center">
+        
+                <div class="flex items-center justify-center">
+                    <div>
+                        <p class="font-lato font-bold text-center text-[#00c94c]"> {{paragraphText}} </p>
+                        <div class="flex justify-center">
+                            <button text="Go Babe" class="px-8 py-2 flex justify-center text-center font-lato font-fold bg-[#00c94c] rounded text-white"> {{buttonText}}</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div (mouseout)="onMouseOut(1)" (mouseover)="onMouseOver(1)" class="w-7 h-7 cursor-pointer rounded-full bg-white border border-[#00c94c] flex items-center justify-center absolute top-[-1rem] left-[13.5rem]">
+                    <div class="w-4 h-4 rounded-full bg-[#00c94c] ">
+                    </div>
+                </div>
+        
+                <div (mouseout)="onMouseOut(2)" (mouseover)="onMouseOver(2)" class="w-7 h-7 cursor-pointer rounded-full bg-white border border-[#00c94c] flex items-center justify-center absolute bottom-[-1rem] left-[14rem]">
+                    <div class="w-4 h-4 rounded-full bg-[#00c94c] ">
+                    </div>
+                </div>
+        
+                <div (mouseout)="onMouseOut(3)" (mouseover)="onMouseOver(3)" class="w-7 h-7 cursor-pointer rounded-full bg-white border border-[#00c94c] flex items-center justify-center absolute top-[15rem] right-[-1rem]">
+                    <div class="w-4 h-4 rounded-full bg-[#00c94c] ">
+                    </div>
+                </div>
+        
+                <div (mouseout)="onMouseOut(4)" (mouseover)="onMouseOver(4)" class="w-7 h-7 cursor-pointer rounded-full bg-white border border-[#00c94c] flex items-center justify-center absolute top-[15rem] left-[-1rem]">
+                    <div class="w-4 h-4 rounded-full bg-[#00c94c] ">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+
+
+<section class="bg-gray-shade-two px-8 py-4">
+    <div class="grid grid-rows space-y-4 lg:grid-cols-4 lg:space-x-4 mt-12">
+        <div class="flex bg-white px-4 py-4 justify-between rounded-lg">
+            <div>
+                <h1 class="font-bold font-rubik text-2xl"> 5 </h1>
+                <p class="font-lato font-bold tracking-wider"> Awards</p>
+            </div>
+            <div>
+                <img src="assets/images/best-awards-desk.jpg" class="w-32" alt="awards">
+            </div>
+        </div>
+
+        <div class="flex bg-white px-4 py-4 justify-between rounded-lg">
+            <div>
+                <h1 class="font-bold font-rubik text-2xl"> 150+ </h1>
+                <p class="font-lato font-bold tracking-wider"> Countries</p>
+            </div>
+            <div>
+                <img src="assets/images/best-countries-desk.jpg" class="w-32" alt="awards">
+            </div>
+        </div>
+
+        <div class="flex bg-white px-4 py-4 justify-between rounded-lg">
+            <div>
+                <h1 class="font-bold font-rubik text-2xl"> 12M+ </h1>
+                <p class="font-lato font-bold tracking-wider"> Account Opened</p>
+            </div>
+            <div>
+                <img src="assets/images/best-accounts-desk.jpg" class="w-32" alt="awards">
+            </div>
+        </div>
+
+        <div class="flex bg-white px-4 py-4 justify-between rounded-lg">
+            <div>
+                <h1 class="font-bold font-rubik text-2xl"> 11 </h1>
+                <p class="font-lato font-bold tracking-wider"> Years</p>
+            </div>
+            <div>
+                <img src="assets/images/best-years-desk.jpg" class="w-32" alt="awards">
+            </div>
+        </div>
+   </div>
+</section>
+
+<app-footer></app-footer>

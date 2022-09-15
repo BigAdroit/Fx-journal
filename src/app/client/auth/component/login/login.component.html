@@ -1,0 +1,38 @@
+<div class="w-full md:bg-deep-blue py-12 h-screen">
+    <div class="bg-white w-full lg:w-[500px] z-[1000000000000] mx-auto shadow-blue shadow-md p-12 rounded-xl">
+        <div class="flex justify-between items-center">
+             <h1 class="font-rubik font-bold text-xl text-blue-shade-one"> Sign In</h1>
+             <!-- <div class="cursor-pointer" (click)="closeLoginModal()">
+                 <img src="assets/images/close.svg" class=" w-8" alt="">
+             </div> -->
+        </div>
+        <div class="my-8">
+             <div [formGroup]="loginForm" (ngSubmit)="loginToPortal(loginForm.value)">
+                 <div>
+                     <input type="email" formControlName="email" placeholder="Email" class="px-4 py-4 rounded-lg tracking-wider focus:border-blue-shade-one border-2 placeholder:font-lato font-lato font-bold text-black w-full">
+                     <span class="text-[red] text-[12px]" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+                         Email is required
+                     </span>
+                     <span class="text-[red] text-[12px]" *ngIf="loginForm.get('email')?.errors?.['email'] && loginForm.get('email')?.touched">
+                         Invalid email address
+                     </span>
+                 </div>
+                 <div class="mt-4">
+                     <input type="password" formControlName="password" placeholder="password" class="px-4 py-4 rounded-lg tracking-wider focus:border-blue-shade-one border-2 placeholder:font-lato font-lato font-bold text-black w-full">
+                     <span class="text-[red] text-[12px]" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                         Password is required
+                     </span>
+                 </div>
+                 <div class="text-blue-shade-one mt-2 font-lato font-bold uppercase text-[12px] tracking-wide cursor-pointer"> forgot password? </div>
+     
+                 <div>
+                     <button [disabled]="loginForm.invalid"  class="btn btn-active btn-primary w-full mt-4" (click)="loginToPortal(loginForm.value)"> Login </button>           
+                  </div>
+     
+                 <div class="mt-8">
+                     <button  class="uppercase w-full rounded-3xl px-8 py-4 bg-gray-shade-one text-blue-shade-one font-rubik font-[600]  transition-all duration-500 hover:bg-gray-shade-two tracking-widest"> Registeration </button>
+                 </div>
+             </div>
+        </div>
+     </div>
+</div>

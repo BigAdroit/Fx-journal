@@ -1,0 +1,60 @@
+<div class="w-full bg-deep-blue py-12">
+    <div class="bg-white w-full lg:w-[500px] z-[1000000000000] mx-auto p-12 rounded-xl">
+        <div class="flex justify-between items-center">
+             <h1 class="font-rubik font-bold text-xl text-blue-shade-one"> Open Account</h1>
+             <!-- <div (click)="closeRegModal()" class="cursor-pointer">
+                 <img src="assets/images/close.svg" class=" w-8" alt="">
+             </div> -->
+        </div>
+        <p class="text-blue-shade-one font-lato font-medium"> Join More than 400, 000 traders</p>
+        <div class="my-8">
+             <form [formGroup]="regForm" (ngSubmit)="Register(regForm.value)">
+                <div class="">
+                    <input type="text" formControlName="firstname" placeholder="First Name" class="px-4 py-4 rounded-lg tracking-wider focus:border-blue-shade-one border-2 placeholder:font-lato font-lato font-bold text-black w-full">
+                    <span class="text-[red] text-[12px]" *ngIf="regForm.get('firstname')?.invalid && regForm.get('firstname')?.touched">
+                        Firstname is required
+                    </span>
+                </div>
+                <div class="mt-4">
+                    <input type="text" formControlName="lastname" placeholder="Last Name" class="px-4 py-4 rounded-lg tracking-wider focus:border-blue-shade-one border-2 placeholder:font-lato font-lato font-bold text-black w-full">
+                    <span class="text-[red] text-[12px]" *ngIf="regForm.get('lastname')?.invalid && regForm.get('lastname')?.touched">
+                        Lastname is required
+                    </span>
+                </div>
+                 <div class="mt-4">
+                     <input type="email" formControlName="email" placeholder="Email" class="px-4 py-4 rounded-lg tracking-wider focus:border-blue-shade-one border-2 placeholder:font-lato font-lato font-bold text-black w-full">
+                     <span class="text-[red] text-[12px]" *ngIf="regForm.get('email')?.invalid && regForm.get('email')?.touched">
+                        Email is required
+                    </span>
+                    <span class="text-[red] text-[12px]" *ngIf="regForm.get('email')?.errors?.['email'] && regForm.get('email')?.touched">
+                        Invalid email address
+                    </span>
+                 </div>
+                 <div class="mt-4">
+                     <input type="password" formControlName="password" placeholder="Password" class="px-4 py-4 rounded-lg tracking-wider focus:border-blue-shade-one border-2 placeholder:font-lato font-lato font-bold text-black w-full">
+                     <span class="text-[red] text-[12px]" *ngIf="regForm.get('password')?.invalid && regForm.get('password')?.touched">
+                        Password is required
+                    </span>
+                 </div>
+                 
+                 <div class="flex space-x-4 my-4 items-center">
+                    <div>
+                        <input type="checkbox">
+                    </div>
+                    <div>
+                        <p class="text-black-shade-one font-lato tracking-wide "> By clicking open account, you confirm
+                            that you have read and agree with our customer agreement. </p>
+                    </div>
+                 </div>
+     
+                 <div>
+                     <button class="uppercase w-full rounded-3xl px-8 py-4 bg-blue mt-8 text-white font-rubik font-[600] hover:text-white transition-all duration-500 hover:bg-blue-shade-one tracking-widest" (click)="Register(regForm.value)"> Open Account </button>
+                 </div>
+     
+                 <div class="mt-8">
+                     <button class="uppercase w-full rounded-3xl px-8 py-4 bg-gray-shade-one text-blue-shade-one font-rubik font-[600]  transition-all duration-500 hover:bg-gray-shade-two tracking-widest"> login </button>
+                 </div>
+             </form>
+        </div>
+     </div>
+</div>

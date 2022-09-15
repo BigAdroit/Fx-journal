@@ -1,0 +1,23 @@
+<div class="w-[280px] lg:w-full bg-deep-blue h-screen py-2 overflow-y-scroll z-30 animate-side-bar">
+    <div class="bg-white rounded-xl w-[95%] mx-auto">
+        <div class="flex space-x-4 px-4 py-4 items-center">
+            <img src="assets/images/trading-jet.png" class="w-12 h-12 rounded-full border border-deep-blue" alt="profile">
+            <div>
+                <h1 class="font-rubik font-[600] text-[16px] text-deep-blue tracking-wider"> {{firstname }} {{lastname}} </h1>
+                <p *ngIf="verificationStatus" class="bg-[#f2fbf4] text-center rounded-lg text-[12px] font-bold font-lato"> verified </p>
+                <p *ngIf="!verificationStatus" class="danger text-center rounded-lg text-[12px] font-bold font-lato"> Not verified </p>
+
+            </div>
+        </div>
+    </div>
+    <div class="mt-16">
+        <div *ngFor="let menu of menuList">
+            <div routerLinkActive="bg-gray-shade-two text-blue" (click)="closeOnClick()" [routerLinkActiveOptions]="{exact : true}" routerLink="{{menu.route}}" class="group rounded-bl-xl text-white group-hover:text-blue rounded-tl-xl cursor-pointer px-4 py-2 my-1 ml-3 hover:bg-gray-shade-two hover:text-deep-blue">
+                <div routerLinkActive="text-deep-blue" [routerLinkActiveOptions]="{exact : true}" class="font-lato font-bold pl-8 group-hover:text-deep-blue ml-2">
+                    <i routerLinkActive="text-blue text-blue" [routerLinkActiveOptions]="{exact : true}" class="fa {{menu.icon}} text-2xl mr-4" aria-hidden="true"></i>
+                <span class=""> {{menu.title}} </span>
+                    
+            </div>
+        </div>
+    </div>
+</div>

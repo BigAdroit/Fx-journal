@@ -1,0 +1,139 @@
+<app-client-header></app-client-header>
+<div class="w-full  bg-deep-blue px-1 py-12 flex flex-col items-center justify-between lg:flex-row lg:h-[80vh] lg:px-12">
+    <div class="w-full text-center lg:w-[60%] lg:text-left">
+        <div class="">
+            <h1 class="text-white font-rubik text-xl lg:text-4xl font-bold uppercase tracking-widest"> Trade Like a Pro.</h1>
+            <h1 class="text-white font-rubik text-xl lg:text-2xl font-bold uppercase tracking-widest"> Achieve your finacial freedom.</h1>
+            <p class="text-white font-lato font-bold py-8 tracking-widest text-[12px]"> Keep track of your trade, identify the strategy <br> that work best for you.</p>
+            <button class="uppercase rounded-3xl px-8 py-4 bg-blue text-white font-rubik font-[600] hover:text-white transition-all duration-500 hover:bg-blue-shade-one tracking-widest hidden lg:block" (click)="openReg()"> Create  An Account</button>
+        </div>
+    </div>
+    <div class=" w-full lg:w-[40%]">
+        <img src="assets/images/undraw-sketch.svg" class="w-full" alt="undraw sketch">
+       <div class="flex justify-center">
+            <button class="uppercase rounded-3xl px-8 py-4 bg-blue mt-12 text-white font-rubik font-[600] hover:text-white transition-all duration-500 hover:bg-blue-shade-one tracking-widest lg:hidden" (click)="openReg()"> Create  An Account</button>
+       </div>
+    </div>
+</div>
+
+<section class="px-2 py-8 bg-gray-shade-one lg:px-8 lg:py-20">
+    <h1 class="mb-4 text-center font-rubik font-bold text-xl lg:text-4xl"> Your Online Trading Journal </h1>
+   <div class=" flex items-center ">
+        <div class="w-full lg:w-[40%]">
+            <div data-aos="flip-right" class="group bg-white px-4 py-4 transition-all duration-500 rounded-lg hover:bg-blue-shade-one hover:text-white" (mouseover)="onMouseOver(1)">
+                <h2 class="font-lato font-bold text-[1.2rem] lg:text-2xl tracking-widest lg:text-left"> Trasparent Trading Journal </h2>
+                <ol class="list-disc px-4">
+                    <li class="text-[0.9rem] lg:text-[1rem] font-lato font-bold my-1">Free</li>
+                    <li class="text-[0.9rem] lg:text-[1rem] font-lato font-bold my-1"> No Commisions</li>
+                    <li class="text-[0.9rem] lg:text-[1rem] font-lato font-bold my-1">Secure and reliable online trading journal</li>
+                </ol>
+            </div>
+
+            <div data-aos="flip-left" class="group bg-white px-4 py-4 rounded-lg mt-4 transition-all duration-500 hover:bg-blue-shade-one hover:text-white" (mouseover)="onMouseOver(2)">
+                <h2 class="font-lato font-bold text-[1.2rem] lg:text-2xl tracking-widest"> Monthly Analysis of Trade </h2>
+                <ol class="list-disc px-4">
+                    <li class="text-[0.9rem] lg:text-[1rem] font-lato font-bold my-1">Back test your trading with demo</li>
+                    <li class="text-[0.9rem] lg:text-[1rem] font-lato font-bold my-1"> We give Analysis of both wining and loosing trade to boost your trading profitablility</li>
+                </ol>
+            </div>
+
+            <div data-aos="flip-right" class="group bg-white px-4 py-4 rounded-lg mt-4 transition-all duration-500 hover:bg-blue-shade-one hover:text-white" (mouseover)="onMouseOver(3)">
+                <h2 class="font-lato font-bold text-[1.2rem] lg:text-2xl tracking-widest"> Free Educational Material </h2>
+                <ol class="list-disc px-4">
+                    <li class="text-[0.9rem] lg:text-[1rem] font-lato font-bold my-1">Watch our course on the basic aspects of trading.</li>
+                    <li class="text-[0.9rem] lg:text-[1rem] font-lato font-bold my-1"> Attend regular webinars and live trading sessions for beginners and pros.</li>
+                </ol>
+            </div>
+
+        </div>
+        <div data-aos="flip-up" class=" hidden lg:w-[60%] lg:block">
+            <img [src]="displayImage" class="w-full " alt="">
+        </div>
+   </div>
+
+   <div class="mt-8" data-aos="flip-up">
+        <h1 class="mb-4 text-center font-rubik font-bold text-xl lg:text-4xl"> Keep track of your trade with the best <br> online trading journal </h1>
+   </div>
+   <div class="grid grid-rows space-y-4 lg:grid-cols-4 lg:space-x-4 mt-12">
+        <div data-aos="flip-up" class="flex bg-white px-4 py-4 justify-between rounded-lg">
+            <div>
+                <h1 class="font-bold font-rubik text-2xl"> 5 </h1>
+                <p class="font-lato font-bold tracking-wider"> Awards</p>
+            </div>
+            <div>
+                <img src="assets/images/best-awards-desk.jpg" class="w-32" alt="awards">
+            </div>
+        </div>
+
+        <div data-aos="flip-right" class="flex bg-white px-4 py-4 justify-between rounded-lg">
+            <div>
+                <h1 class="font-bold font-rubik text-2xl"> 150+ </h1>
+                <p class="font-lato font-bold tracking-wider"> Countries</p>
+            </div>
+            <div>
+                <img src="assets/images/best-countries-desk.jpg" class="w-32" alt="awards">
+            </div>
+        </div>
+
+        <div data-aos="flip-left" class="flex bg-white px-4 py-4 justify-between rounded-lg">
+            <div>
+                <h1 class="font-bold font-rubik text-2xl"> 12M+ </h1>
+                <p class="font-lato font-bold tracking-wider"> Account Opened</p>
+            </div>
+            <div>
+                <img src="assets/images/best-accounts-desk.jpg" class="w-32" alt="awards">
+            </div>
+        </div>
+
+        <div data-aos="flip-up" class="flex bg-white px-4 py-4 justify-between rounded-lg">
+            <div>
+                <h1 class="font-bold font-rubik text-2xl"> 11 </h1>
+                <p class="font-lato font-bold tracking-wider"> Years</p>
+            </div>
+            <div>
+                <img src="assets/images/best-years-desk.jpg" class="w-32" alt="awards">
+            </div>
+        </div>
+   </div>
+
+   <div>
+        <h1 data-aos="flip-right" class="mb-4 text-center font-rubik font-bold text-xl lg:text-4xl mt-8"> Make Online Journal work For You</h1>
+        <p data-aos="flip-up" class="font-lato font-bold lg:w-full text-center"> We are constantly improving our product to make your trading experience better. </p>
+
+        <div class="">
+            <div  class="grid grid-rows space-y-4 lg:grid-cols-4 lg:space-x-4 mt-12">
+                <div data-aos="flip-left"  class="grid justify-center">
+                    <img class="w-32 mx-auto" src="assets/images/invest-icon-leverage.jpg " alt="">
+                    <p class="font-lato font-bold text-center"> Best analysis for your strategy </p>
+                </div>
+                <div data-aos="flip-up"  class="grid justify-center">
+                    <img class="w-32 mx-auto" src="assets/images/invest-icon-assets.jpg"  alt="">
+                    <p class="text-center font-lato font-bold"> 80+ Trading Articles </p>
+                </div>
+                <div data-aos="flip-down"  class="grid justify-center">
+                    <img class="w-32 mx-auto" src="assets/images/invest-icon-support.jpg"  alt="">
+                    <p class="text-center font-lato font-bold"> 24/7 Customer Support in your language </p>
+                </div>
+                <div data-aos="flip-up" class="grid justify-center">
+                    <img class="w-32 mx-auto" src="assets/images/invest-icon-status.jpg"  alt="">
+                    <p class="text-center font-lato font-bold"> Status Program </p>
+                </div>
+            </div>
+        </div>
+   </div>
+
+   <div  data-aos="flip-right" class="lg:px-8 px-2 py-4 mx-4 bg-gray-shade-two mt-12 rounded-xl flex flex-col lg:flex-row">
+        <div class="w-full lg:w-[60%]">
+            <h1 class="mb-4 tex-left font-rubik font-bold text-xl lg:text-4xl mt-8 "> Trade on the with journal <br> and keep the profit rolling</h1>
+            <p class="w-full text-sm lg:w-2/3 text-left lg:text-xl font-lato font-bold my-8 ">Enjoy a smooth trading experience from any device. Download our app and keep track of your orders whether you're in the office, on vacation, or at home.</p>
+            <div>
+                <img src="assets/images/qr-code.svg" alt="">
+            </div>
+        </div>
+        <div class="w-full hidden lg:w-[40%] lg:block">
+            <img src="assets/images/spreads.png" class="w-full" alt="">
+        </div>
+   </div>
+</section>
+
+<app-footer></app-footer>

@@ -1,0 +1,49 @@
+<div class="p-3 lg:p-12">
+    <p class="bg-deep-blue text-white font-fira font-medium py-2 px-2 md:px-8 items-center  rounded flex justify-between"> {{journalData?.currency_pair |uppercase}} 
+        <span class="block text-[12px]"> {{journalData?.trade_date_time | date: "dd-MM-yyyy  h:mm:a"}} </span>
+    </p> 
+    <div>
+
+    </div>
+    <div class="md:grid md:grid-cols-3 bg-white my-8 md:p-8 p-2  rounded md:gap-8">
+        <div class="border-r-2 p-3 my-2 bg-[#f8fafd] rounded md:shadow-md shadow-deep-blue">
+            <p class="font-fira font-semibold"> Position Type  <i class="fa fa-info-circle" aria-hidden="true"></i> </p>
+            <p class="font-fira"> {{journalData?.position_type | uppercase}} </p>
+        </div>
+        <div class="border-r-2 p-3 my-2 bg-[#f8fafd] rounded md:shadow-md shadow-deep-blue">
+            <p class="font-fira font-medium "> Lotsize  <i class="fa fa-info-circle" aria-hidden="true"></i> </p>
+            <p class="font-fira"> {{journalData?.lot_size}} </p>
+        </div>
+        <div class="p-3 my-2 bg-[#f8fafd] rounded md:shadow-md shadow-deep-blue">
+            <p class="font-fira font-medium "> Risk/Reward  <i class="fa fa-info-circle" aria-hidden="true"></i> </p>
+            <p class="font-fira"> {{journalData?.risk_reward}} </p>
+        </div>
+
+        <div class="border-r-2 p-3 my-2 bg-[#f8fafd] rounded md:shadow-md shadow-deep-blue">
+            <p class="font-fira font-medium"> Entry Price  <i class="fa fa-info-circle" aria-hidden="true"></i> </p>
+            <p class="font-fira"> {{journalData?.entry_price}} </p>
+        </div>
+        <div class="border-r-2 p-3 my-2 bg-[#f8fafd] rounded md:shadow-md shadow-deep-blue">
+            <p class="font-fira font-medium "> Take Profit  <i class="fa fa-info-circle" aria-hidden="true"></i> </p>
+            <p class="font-fira"> {{journalData?.take_profit}} </p>
+        </div>
+        <div class="p-3 my-2 bg-[#f8fafd] rounded md:shadow-md shadow-deep-blue">
+            <p class="font-fira font-medium "> Stop Loss  <i class="fa fa-info-circle" aria-hidden="true"></i> </p>
+            <p class="font-fira"> {{journalData?.stop_loss}} </p>
+        </div>
+
+        <div class="border-r-2 p-3 my-2 bg-[#f8fafd] rounded md:shadow-md shadow-deep-blue">
+            <p class="font-fira font-medium"> Exit Price  <i class="fa fa-info-circle" aria-hidden="true"></i> </p>
+            <p class="font-fira"> {{journalData?.exit_price}} </p>
+        </div>
+        <div class="border-r-2 p-3 my-2 bg-[#f8fafd] rounded md:shadow-md shadow-deep-blue">
+            <p class="font-fira font-medium "> Trade Setup  <i class="fa fa-info-circle" aria-hidden="true"></i> </p>
+            <p class="font-fira"> {{journalData?.trade_setup}} </p>
+        </div>
+        <div class="p-3 my-2 bg-[#f8fafd] rounded md:shadow-md shadow-deep-blue">
+            <p class="font-fira font-medium "> Reason  <i class="fa fa-info-circle" aria-hidden="true"></i> </p>
+            <p class="font-fira"> {{journalData?.comment}} </p>
+        </div>
+    </div>
+</div>
+ 

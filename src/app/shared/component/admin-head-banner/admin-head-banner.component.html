@@ -1,0 +1,14 @@
+<div class="px-2 bg-white w-full lg:px-16 py-2 z-[9999] sticky top-0 shadow-lg lg:block flex items-center justify-between">
+    <div (click)="actionBtn()" class="lg:hidden">
+        <img  *ngIf="iconToggle" src="assets/images/menu.svg"  class="w-8 h-8" alt="menu">
+        <img  *ngIf="!iconToggle" src="assets/images/close.svg"  class="w-8 h-8" alt="close">
+    </div>
+    <div class="flex justify-end space-x-8">
+        <div class="cursor-pointer">
+            <i class="fa fa-bell text-xl lg:text-3xl text-deep-blue hover:text-blue" aria-hidden="true"></i>
+        </div>
+        <div class="cursor-pointer" (click)="logOut()">
+            <i class="fa fa-sign-out text-xl lg:text-3xl text-deep-blue hover:text-blue" aria-hidden="true"></i>
+        </div>
+    </div>
+</div>

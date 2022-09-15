@@ -1,0 +1,118 @@
+<div class="lg:p-12">
+    <div>
+        <p class="w-full text-xl font-fira font-bold bg-deep-blue uppercase text-white rounded-xl shadow-sm p-4 shadow-[white]"> Add To Your Market Watchlist</p>
+    </div>
+    <div class="w-full my-12">
+        <form [formGroup]="journalForm" (ngSubmit)="createJournal(journalForm.value)">
+            <div class="flex w-full space-x-12">
+                <div class="w-full md:w-1/2">
+                    <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Currency Pair</label>
+                    <input type="text" formControlName="currency_pair" placeholder="Currency Pair" class="input w-full focus:border-0 text-[14px] input-bordered input-primary" />
+                    <span *ngIf="journalForm.get('currency_pair')?.errors?.['required'] && journalForm.get('currency_pair')?.touched" class="text-[red] text-[14px]" > Currency Pair is requred</span>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Trade Date and Time </label>
+                    <input type="datetime-local" formControlName="trade_date_time" placeholder="Currency Pair" class="input  focus:border-0 text-[14px] input-bordered input-primary w-full" />
+                    <span *ngIf="journalForm.get('trade_date_time')?.errors?.['required'] && journalForm.get('trade_date_time')?.touched" class="text-[red] text-[14px]" > This field is required</span>
+                </div>
+            </div>
+
+            <div class="flex w-full space-x-12 mt-4">
+                <div class="w-full md:w-1/2">
+                    <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Position Type </label>
+                    <select class="select select-primary w-full " formControlName="position_type">
+                        <option disabled selected> Select Position Type </option>
+                        <option value="long">Long</option>
+                        <option value="short">Short</option>
+                    </select>  
+                    <span *ngIf="journalForm.get('position_type')?.errors?.['required'] && journalForm.get('position_type')?.touched" class="text-[red] text-[14px]" > This field is required</span>              
+                </div>
+                <div class="w-full md:w-1/2">
+                    <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Profit / Loss </label>
+                    <select formControlName="profit_loss" class="select select-primary w-full">
+                        <option disabled selected> Select Option </option>
+                        <option value="profit">Profit</option>
+                        <option value="loss">Loss</option>
+                    </select>
+                    <span *ngIf="journalForm.get('profit_loss')?.errors?.['required'] && journalForm.get('profit_loss')?.touched" class="text-[red] text-[14px]" > This field is required</span>              
+  
+                </div>
+            </div>
+
+            <div class="flex w-full space-x-12 mt-4">
+                <div class="w-full md:w-1/2">
+                    <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Entry Price </label>
+                    <input type="number" formControlName="entry_price" placeholder="Entry Price" class="input w-full focus:border-0 text-[14px] input-bordered input-primary" />
+                    <span *ngIf="journalForm.get('entry_price')?.errors?.['required'] && journalForm.get('entry_price')?.touched" class="text-[red] text-[14px]" > This field is required</span>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Exit Price </label>
+                    <input type="number" formControlName="exit_price" placeholder="Exit Price" class="input  focus:border-0 text-[14px] input-bordered input-primary w-full" />
+                    <span *ngIf="journalForm.get('exit_price')?.errors?.['required'] && journalForm.get('exit_price')?.touched" class="text-[red] text-[14px]" > This field is required</span>
+
+                </div>
+            </div>
+
+            <div class="flex w-full space-x-12 mt-4">
+                <div class="w-full md:w-1/2">
+                    <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Take Profit </label>
+                    <input type="number" formControlName="take_profit" placeholder="Currency Pair" class="input w-full focus:border-0 text-[14px] input-bordered input-primary" />
+                    <span *ngIf="journalForm.get('take_profit')?.errors?.['required'] && journalForm.get('take_profit')?.touched" class="text-[red] text-[14px]" > This field is required</span>
+
+                </div>
+                <div class="w-full md:w-1/2">
+                    <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Stop Loss </label>
+                    <input type="number" formControlName="stop_loss" placeholder="Currency Pair" class="input  focus:border-0 text-[14px] input-bordered input-primary w-full" />
+                    <span *ngIf="journalForm.get('stop_loss')?.errors?.['required'] && journalForm.get('stop_loss')?.touched" class="text-[red] text-[14px]" > This field is required</span>
+
+                </div>
+            </div>
+
+            <div class="flex w-full space-x-12 mt-4">
+                <div class="w-full md:w-1/2">
+                    <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Lot Size </label>
+                    <input type="number" formControlName="lot_size" placeholder="Lot Size" class="input w-full focus:border-0 text-[14px] input-bordered input-primary" />
+                    <span *ngIf="journalForm.get('lot_size')?.errors?.['required'] && journalForm.get('lot_size')?.touched" class="text-[red] text-[14px]" > This field is required</span>
+
+                </div>
+                <div class="w-full md:w-1/2">
+                    <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Risk : Reward </label>
+                    <select class="select select-primary w-full" formControlName="risk_reward">
+                        <option disabled selected> Select Option </option>
+                        <option value="1:1">1:1 Risk Reward</option>
+                        <option value="1:1.5">1:1.5 Risk Reward</option>
+                        <option value="1:2">1:1.2 Risk Reward</option>
+                        <option value="1:2.5">1:2.5 Risk Reward</option>
+                        <option value="1:3">1:3 Risk Reward</option>
+                        <option value="1:3.5">1:3.5 Risk Reward</option>
+                        <option value="1:4">1:4 Risk Reward</option>
+                        <option value="1:4.5">1:4.5 Risk Reward</option>
+                        <option value="1:5">1:5 Risk Reward</option>
+                    </select> 
+                    <span *ngIf="journalForm.get('risk_reward')?.errors?.['required'] && journalForm.get('risk_reward')?.touched" class="text-[red] text-[14px]" > This field is required</span>
+
+                </div>
+            </div>
+
+            <div class="flex w-full space-x-12 mt-4">
+                <div class="w-full md:w-1/2">
+                    <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Trade Setup </label>
+                    <textarea formControlName="trade_setup" class="textarea textarea-primary w-full focus:border-0" placeholder="Trade Setup"></textarea> 
+                    <span *ngIf="journalForm.get('trade_setup')?.errors?.['required'] && journalForm.get('trade_setup')?.touched" class="text-[red] text-[14px]" > This field is required</span>
+               
+                </div>
+                <div class="w-full md:w-1/2">
+                    <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Reason For Entry </label>
+                    <textarea formControlName="comment" class="textarea textarea-primary w-full focus:border-0" placeholder="Reason For Entry"></textarea>               
+                    <span *ngIf="journalForm.get('comment')?.errors?.['required'] && journalForm.get('comment')?.touched" class="text-[red] text-[14px]" > This field is required</span>
+
+                </div>
+            </div>
+
+            <div class="mt-12">
+                <button type="submit" [disabled]="journalForm.invalid" class="btn btn-active btn-primary px-16 hover:bg-deep-blue" routerLink="/client-dashboard/create-journal"> Submit  </button>
+            </div>
+
+        </form>
+    </div>
+</div>

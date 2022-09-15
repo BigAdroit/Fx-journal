@@ -1,0 +1,24 @@
+<div class="w-full md:bg-deep-blue py-12 h-screen">
+    <div class="bg-white w-full lg:w-[500px] z-[1000000000000] mx-auto shadow-blue shadow-md p-12 rounded-xl">
+        <div class="flex justify-between items-center">
+             <!-- <div class="cursor-pointer" (click)="closeLoginModal()">
+                 <img src="assets/images/close.svg" class=" w-8" alt="">
+             </div> -->
+        </div>
+        <div class="my-8">
+             <form [formGroup]="resetForm" (ngSubmit)="sendCode(resetForm.value)">
+                 <div>
+                    <label for="" class="text-gray-shade-three block my-1 "> Please enter the code sent to your email</label>
+                     <input type="number" formControlName="code" placeholder="Enter  Code" class="px-4 py-4 rounded-lg tracking-wider focus:border-blue-shade-one border-2 placeholder:font-lato font-lato font-bold text-black w-full">
+                     <span class="text-[red] text-[12px]" *ngIf="resetForm.get('code')?.errors?.['required'] && resetForm.get('code')?.touched">
+                            Please enter your reset code
+                     </span>
+                 </div>
+                 <div class="mt-12">
+                     <button type="submit" [disabled]="resetForm.invalid" class="btn btn-active btn-primary w-full mt-4" > Proceed </button>           
+                 </div>
+                </form>
+        </div>
+     </div>
+</div>
+

@@ -1,0 +1,151 @@
+<section class="mt-8 lg:mt-16 px-2 lg:px-12 ">
+  <div class="flex flex-col-reverse lg:flex-row lg:space-x-4 h-[] px-2">
+    <div class="bg-white my-4 lg:w-[70%] rounded-xl px-2 py-2">
+        <p class="bg-deep-blue rounded text-white py-2 text-fira font-medium px-4 text-[14px]">Today September 1st 2022</p>
+
+        <div class="mt-2" data-aos="fade-up">
+            <div class="overflow-x-auto">
+                <table class="table table-zebra w-full">
+                  <!-- head -->
+                  <thead>
+                    <tr>
+                      <th>Time</th>
+                      <th>Currency</th>
+                      <th>Event</th>
+                      <th> Detail</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- row 1 -->
+                    <tr>
+                      <th> 12:20 am</th>
+                      <td> JPY </td>
+                      <td> Capital Spending q/y </td>
+                      <td>4.6%</td>
+                    </tr>
+                    <!-- row 2 -->
+                    <tr>
+                        <th> 1:30 am</th>
+                        <td> JPY </td>
+                        <td> Final Manifacturing PMI</td>
+                        <td>51.5</td>
+                    </tr>
+                    <!-- row 3 -->
+                    <tr>
+                        <th> 1:30 am</th>
+                        <td> JPY </td>
+                        <td> Final Manifacturing PMI</td>
+                        <td>51.5</td>
+                    </tr>
+                    <tr>
+                        <th> 1:30 am</th>
+                        <td> JPY </td>
+                        <td> Final Manifacturing PMI</td>
+                        <td>51.5</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+        </div>
+    </div>
+    <div class="w-full lg:w-[30%] bg-deep-blue text-white" data-aos="fade-up">
+        <mat-calendar [(selected)]="selected" ></mat-calendar>
+        <p>Selected date: {{selected}}</p>
+    </div>
+</div>
+<div class="mx-2 mt-6">
+    <p class="bg-deep-blue rounded py-2 text-white text-fira font-medium px-4 text-[16px]">Upcoming Events </p>
+    <div class="overflow-x-auto">
+        <table class="table table-zebra w-full">
+          <!-- head -->
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th> Time </th>
+              <th>Currency</th>
+              <th>Event</th>
+              <th> Detail</th>
+              <th>Actual</th>
+              <th> Forecast</th>
+              <th>Previous</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- row 1 -->
+            <tr>
+              <th>Sept. 2 2022</th>
+              <td> 12:50am</td>
+              <td> JPY </td>
+              <td> Monetary Base y/y </td>
+              <td></td>
+              <td></td>
+              <td> 3.1% </td>
+              <td> 2.8% </td>
+            </tr>
+            <!-- row 2 -->
+            <tr>
+                <th>Sept. 2 2022</th>
+                <td> 7:00am</td>
+                <td> EUR </td>
+                <td> German Trade Balance </td>
+                <td></td>
+                <td></td>
+                <td> 4.6B </td>
+                <td> 6.4B </td>
+              </tr>
+            <!-- row 3 -->
+            <tr>
+                <th>Sept. 2 2022</th>
+                <td> 7:45am</td>
+                <td> EUR </td>
+                <td> French Gov Budget Balance</td>
+                <td></td>
+                <td></td>
+                <td>  </td>
+                <td>-76.1B</td>
+            </tr>
+            <tr>
+                <th>Sept. 2 2022</th>
+                <td> 1:30pm</td>
+                <td> CAD </td>
+                <td> Labor Productivity q/q</td>
+                <td></td>
+                <td></td>
+                <td>  </td>
+                <td>-76.1B</td>
+            </tr>
+            <tr>
+                <th>Sept. 2 2022</th>
+                <td>1:30pm</td>
+                <td> USD </td>
+                <td> Average Hourly Earnings m/m</td>
+                <td></td>
+                <td></td>
+                <td>0.4%</td>
+                <td>0.5%</td>
+            </tr>
+            <tr>
+                <th>Sept. 2 2022</th>
+                <td> 1:30pm</td>
+                <td> USD </td>
+                <td> Non-Farm Employment Change</td>
+                <td></td>
+                <td></td>
+                <td>295K  </td>
+                <td>528K</td>
+            </tr>
+            <tr>
+                <th>Sept. 2 2022</th>
+                <td> 1:30pm</td>
+                <td> USD </td>
+                <td> Unemployment Rate </td>
+                <td></td>
+                <td></td>
+                <td>3.5% </td>
+                <td>3.5%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</div>
+</section>

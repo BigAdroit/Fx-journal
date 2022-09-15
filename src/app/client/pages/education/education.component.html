@@ -1,0 +1,114 @@
+<app-client-header></app-client-header>
+<app-hero text="Fx journal Education & Analysis"></app-hero>
+<section class="mt-[-5rem] bg-white mx-8 flex flex-col lg:flex-row shadow-2xl" data-aos="fade-up">
+    <div class="w-full lg:w-1/4  px-4 py-4 cursor-pointer">
+        <div *ngFor="let education of educationMaterialList" (click)="onSelect(education)" [class.bg-gray-shade-two]="education.isActive" class="flex space-x-8 items-center px-4 py-2 rounded my-[5px]  hover:bg-gray-shade-two">
+            <div class=" w-[2px] h-9 bg-deep-blue flex justify-center items-center relative">
+                <div  class="w-6 h-6 cursor-pointer rounded-full bg-white border-deep-blue border-2 flex items-center justify-center  absolute">
+                    <p class="font-lato font-bold text-[14px]"> {{education.id}} </p>
+                </div>
+            </div>
+            <div class="text-[12px] font-rubik font-bold text-deep-blue uppercase">
+                {{education.title}}
+            </div>
+        </div>
+    </div>
+    <div class="w-full lg:w-3/4 relative">
+        <div  *ngFor="let education of educationMaterialList" >
+            <ng-container *ngIf="education.isActive && education.title === 'forex basic'">
+                <app-forex-basics [lessonNum]="forexBasic.num"
+                [lessonDescription]="forexBasic.description"
+                [lessonObjectives]="forexBasic.objectives"
+                ></app-forex-basics>
+             </ng-container>
+     
+             <ng-container *ngIf="education.isActive && education.title === 'pips'">
+                <app-forex-basics [lessonNum]="pips.num"
+                [lessonDescription]="pips.description"
+                [lessonObjectives]="pips.objectives"
+                ></app-forex-basics>
+              </ng-container>
+     
+              <ng-container *ngIf="education.isActive && education.title === 'leverage'">
+                <app-forex-basics [lessonNum]="leverage.num"
+                [lessonDescription]="leverage.description"
+                [lessonObjectives]="leverage.objectives"
+                ></app-forex-basics>
+              </ng-container>
+     
+              <ng-container *ngIf="education.isActive && education.title === 'candlestick Basic'">
+                <app-forex-basics [lessonNum]="candlestick1.num"
+                [lessonDescription]="candlestick1.description"
+                [lessonObjectives]="candlestick1.objectives"
+                ></app-forex-basics>
+              </ng-container>
+     
+              <ng-container *ngIf="education.isActive && education.title === 'mastering candlestick'">
+                <app-forex-basics [lessonNum]="candlestick2.num"
+                [lessonDescription]="candlestick2.description"
+                [lessonObjectives]="candlestick2.objectives"
+                ></app-forex-basics>
+              </ng-container>
+
+              <ng-container *ngIf="education.isActive && education.title === 'Trading Cost'">
+                <app-forex-basics [lessonNum]="tradeCost.num"
+                [lessonDescription]="tradeCost.description"
+                [lessonObjectives]="tradeCost.objectives"
+                ></app-forex-basics>
+              </ng-container>
+
+              <ng-container *ngIf="education.isActive && education.title === 'Pending Orders'">
+                <app-forex-basics [lessonNum]="pendingOrders.num"
+                [lessonDescription]="pendingOrders.description"
+                [lessonObjectives]="pendingOrders.objectives"
+                ></app-forex-basics>
+              </ng-container>
+
+              <ng-container *ngIf="education.isActive && education.title === 'Risk Management'">
+                <app-forex-basics [lessonNum]="riskManagement.num"
+                [lessonDescription]="riskManagement.description"
+                [lessonObjectives]="riskManagement.objectives"
+                ></app-forex-basics>
+              </ng-container>
+
+              <ng-container *ngIf="education.isActive && education.title === 'fundamental analysis'">
+                <app-forex-basics [lessonNum]="fundamentalAnalysis.num"
+                [lessonDescription]="fundamentalAnalysis.description"
+                [lessonObjectives]="fundamentalAnalysis.objectives"
+                ></app-forex-basics>
+              </ng-container>
+
+              <ng-container *ngIf="education.isActive && education.title === 'Technical analysis'">
+                <app-forex-basics [lessonNum]="technicalAnalysis.num"
+                [lessonDescription]="technicalAnalysis.description"
+                [lessonObjectives]="technicalAnalysis.objectives"
+                ></app-forex-basics>
+              </ng-container>
+
+              <ng-container *ngIf="education.isActive && education.title === 'channels'">
+                <app-forex-basics [lessonNum]="channels.num"
+                [lessonDescription]="channels.description"
+                [lessonObjectives]="channels.objectives"
+                ></app-forex-basics>
+              </ng-container>
+
+              <ng-container *ngIf="education.isActive && education.title === 'chat pattern'">
+                <app-forex-basics [lessonNum]="chartPattern.num"
+                [lessonDescription]="chartPattern.description"
+                [lessonObjectives]="chartPattern.objectives"
+                ></app-forex-basics>
+              </ng-container>
+
+
+            <div class="absolute bottom-[2rem] flex justify-between w-full px-16">
+                <div>
+                    <button class=" rounded px-8 hover:bg-gray-shade-two py-2 text-[14px] font-lato font-bold tracking-wide" (click)="Previous(education.id)" [disabled]="education.id === 1 && education.isActive === true"> Previous </button>
+                </div>
+                <div>
+                    <button class=" rounded px-8 bg-gray-shade-two py-2 text-[14px] font-lato font-bold tracking-wide" (click)="Next(education.id)" [disabled]="education.id === 12 && education.isActive === true"> Next </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

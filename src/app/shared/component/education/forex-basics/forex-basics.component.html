@@ -1,0 +1,23 @@
+<section  class="px-8 py-8">
+    <h1 class="font-rubik font-bold  text-xl tracking-wider lg:text-4xl"> Forex Basic : video course</h1>
+    <p class="font-lato font-medium text-[14px] lg:text-[18px] my-4">  
+        This video course for beginners will guide you through the main aspects of Forex trading. You will learn how the Forex market works and how you can profit from it. Study the essential Forex terminology, learn how to take your first steps in trading, and start developing your trading strategy.
+    </p>
+
+    <div class="my-16">
+        <h4 class="font-rubik text-[14px] lg:text-[18px] font-bold tracking-wider"> Lesson {{lessonNum}} </h4>
+        <p class="font-lato text-[14px] lg:text-[24px] tracking-wider">
+            
+            {{lessonDescription}}
+        </p>
+    </div>
+    <div class="mt-8">
+        <img src="assets/images/forex-basic.webp" alt="">
+    </div>
+    <nav class="my-16">
+        <p class="font-lato font-medium text-[16px]"> In this lesson, you will learn:</p>
+        <ol class="list-disc px-4 ml-4" *ngFor="let objective of lessonObjectives">
+            <li> {{objective}}</li>
+        </ol>
+    </nav>
+</section>
