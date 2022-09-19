@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { LineChartService } from 'src/app/service/data/chart/line-chart.service';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-bar-chart',
@@ -10,14 +12,15 @@ import { LineChartService } from 'src/app/service/data/chart/line-chart.service'
 export class BarChartComponent implements OnInit {
 
   constructor(
-    private chartService : LineChartService
-
+    private chartService : LineChartService,
+    private activatedRouter : ActivatedRoute
   ) {
     Chart.register(...registerables)
    }
 
   ngOnInit(): void {
-
+    const id = this.activatedRouter.snapshot.paramMap.get("month")
+    console.log(id)
     this.chartService.lineChart().subscribe((res)=> {
         const profit = res.payload.profit
         const loss = res.payload.loss
@@ -26,7 +29,7 @@ export class BarChartComponent implements OnInit {
         const t_ctx = document.getElementById('myData') as unknown as any;
         const ctx = t_ctx.getContext('2d');
         const myChart = new Chart(ctx, {
-        type: 'pie',
+        type: 'doughnut',
         data: {
             labels: ['Loss', 'Profit'],
             datasets: [{

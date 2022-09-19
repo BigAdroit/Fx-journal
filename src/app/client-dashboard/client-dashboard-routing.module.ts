@@ -4,13 +4,16 @@ import { AnalysisComponent } from './analysis/analysis.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { ClientDashboardComponent } from './client-dashboard.component';
 import { CreateJournalComponent } from './create-journal/create-journal.component';
+import { CreateStrategyComponent } from './create-strategy/create-strategy.component';
 import { CreatwWatchlistComponent } from './creatw-watchlist/creatw-watchlist.component';
 import { EventComponent } from './event/event.component';
 import { HomeComponent } from './home/home.component';
 import { JournalComponent } from './journal/journal.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SettingsComponent } from './settings/settings.component';
+import { StrategyComponent } from './strategy/strategy.component';
 import { ViewJournalComponent } from './view-journal/view-journal.component';
+import { ViewMonthlyAnalysisComponent } from './view-monthly-analysis/view-monthly-analysis.component';
 import { WatchlistComponent } from './watchlist/watchlist.component';
 
 const routes: Routes = [
@@ -27,7 +30,10 @@ const routes: Routes = [
     { path: 'profile', component: ProfileComponent},
     { path: 'create-watchlist', component : CreatwWatchlistComponent},
     { path: 'view-journal/:id', component: ViewJournalComponent},
-    { path: 'create-journal', component : CreateJournalComponent}
+    { path: 'create-journal', component : CreateJournalComponent},
+    { path: 'monthlyAnalysis/:month', component : ViewMonthlyAnalysisComponent},
+    { path: 'strategy', component : StrategyComponent},
+    { path: "create-strategy", component : CreateStrategyComponent}
 
     
   ] },

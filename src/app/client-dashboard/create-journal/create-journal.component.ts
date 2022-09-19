@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { JournalService } from 'src/app/service/data/journal/journal.service';
+import { StrategyService } from 'src/app/service/data/strategy/strategy.service';
 import { NotificationService } from 'src/app/service/shared/notification.service';
-import { JournalComponent } from '../journal/journal.component';
 
 @Component({
   selector: 'app-create-journal',
@@ -16,14 +16,22 @@ export class CreateJournalComponent implements OnInit {
    payload = atob(this.token.split('.')[1]);   
    parsedPayload = JSON.parse(this.payload);
    id = this.parsedPayload.info._id 
+   strategies: any
+   timeframes = ["1 Minute", "5 Minutes", "15 Minutes", "1 Hour", "4 Hours", "Day", "Week", "Month"]
+   tradingSession = ["Sydney Session", "Tokyo Session", "London Session", "New York"]
   constructor(
     private journalService : JournalService,
     private notification : NotificationService,
-    private router : Router
+    private router : Router,
+    private strategyService : StrategyService
   ) { }
 
   ngOnInit(): void {
     this.createForm()
+    this.strategyService.getAllUserStrategy().subscribe((res)=> {
+      // console.log(res.payload)
+      this.strategies = res.payload
+    })
   }
 
   createJournal(data: any) {
@@ -52,6 +60,9 @@ export class CreateJournalComponent implements OnInit {
       take_profit : new FormControl("", Validators.required),
       risk_reward : new FormControl("", Validators.required),
       trade_setup : new FormControl("", Validators.required),
+      strategy : new FormControl("", Validators.required),
+      trading_session : new FormControl("", Validators.required),
+      timeframe : new FormControl("", Validators.required),
       comment : new FormControl("", Validators.required),
     })
   }

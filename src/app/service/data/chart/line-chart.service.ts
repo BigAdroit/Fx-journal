@@ -17,4 +17,9 @@ export class LineChartService {
     const url = `http://localhost:3000/fx-journal/lineChart/${this.id}`
     return this.http.get<any>(url)
   }
+
+  getMonthlyAnalysis(month:number) {
+    const url = `http://localhost:3000/fx-journal/monthlyAnalysis/${this.id}/${month}`
+    return this.http.get<any>(url)
+  }
 }

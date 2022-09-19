@@ -1,8 +1,8 @@
-<div class="lg: p-12 ">
+<div class="lg:p-12 p-2 ">
     <div class=" flex justify-end my-2">
         <button class="btn btn-active btn-primary" routerLink="/client-dashboard/create-journal">Add to journal  <i class="fa fa-plus text-2xl ml-2" aria-hidden="true"></i></button>
     </div>
-    <div class=" hidden lg:grid grid-cols-5 space-x-8 items-end mb-12">
+    <div class=" hidden lg:grid grid-cols-5 space-x-8 items-end mb-2">
         <div class="my-2">
             <select class="select select-primary w-full max-w-xs">
                 <option disabled selected> Filter By</option>
@@ -32,41 +32,41 @@
             <button class="btn btn-active" (click)="exportSpreadSheet()">Export Excel</button>
         </div>
     </div>
-    <div class="overflow-x-auto" data-aos="fade-up">
-        <table class="table table-compact w-full" id="table">
-          <thead>
-            <tr>
-              <th>Currency Pair</th> 
-              <th>Date</th> 
-              <th>Long/Short</th> 
-              <th>Lot Size</th>
-              <th>Entry</th> 
-              <th>Take Profit</th> 
-              <th>Stop Loss</th>
-              <th>Exit</th>
-              <th>Setup</th>
-              <th></th>
-            </tr>
-          </thead> 
-          <tbody>
-                <tr class="cursor-pointer" routerLink="/client-dashboard/view-journal/{{journal._id}}" *ngFor="let journal of journalList">
-                    <td>{{journal?.currency_pair | uppercase}} </td> 
-                    <td>{{journal?.trade_date_time | date : "dd-MM-yyyy   h:mm:s:a"}} </td> 
-                    <td> {{journal?.position_type | uppercase}} </td> 
-                    <td> {{journal?.lot_size}}</td>
-                    <td>{{journal?.entry_price}}</td> 
-                    <td>{{journal?.take_profit}}</td> 
-                    <td>{{journal?.stop_loss}}</td>
-                    <td>{{journal?.exit_price}}</td>
-                    <td > {{journal?.trade_setup  | uppercase}} </td>
-                    <td>
-                        <div class="flex space-x-4">
-                            <button class="btn btn-active btn-primary" routerLink="/client-dashboard/view-journal">view  <i class="fa fa-eye text-2xl ml-2" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </td>
+
+      <div class="w-full overflow-scroll bg-white rounded">
+        <table class="border-2 font-fira text-[14px] rounded-xl font-normal tracking-wide" id="trade">
+            <thead>
+                <tr class="border-1" >
+                    <th> No </th>
+                    <th> Entry Date/Time</th>
+                    <th> Position </th>
+                    <th>Lot Size </th>
+                    <th> Curreny Pair </th>
+                    <th> Strategy </th>
+                    <th> Time Frame  </th>
+                    <th> Entry Price </th>
+                    <th> Stop Loss</th>
+                    <th> Take Profit </th>
+                    <th> Pips</th>
+                    <th> Win/Loss</th>
                 </tr>
-          </tbody>
+            </thead>
+            <tbody>
+                <tr class="cursor-pointer" routerLink="/client-dashboard/view-journal/{{journal._id}}" *ngFor="let journal of journalList index as i">
+                    <td> {{ i + 1 }} </td>
+                    <td> {{journal?.trade_date_time | date : "dd-MM-yyyy   h:mm:s:a"}} </td>
+                    <td> {{journal?.position_type | uppercase}} </td>
+                    <td> {{journal?.lot_size}} </td>
+                    <td class="uppercase"> {{journal?.currency_pair | uppercase}} </td>
+                    <td> {{journal?.strategy}} </td>
+                    <td> {{journal?.timeframe}} </td>
+                    <td> {{journal?.entry_price}} </td>
+                    <td> {{journal?.stop_loss}} </td>
+                    <td> {{journal?.take_profit}}</td>
+                    <td> 234 </td>
+                    <td class="text-[white] bg-[green] "> Win </td>
+                </tr>
+            </tbody>
         </table>
-      </div>
+    </div>
 </div>

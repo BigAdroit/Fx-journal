@@ -36,7 +36,7 @@ export class UserSidenavComponent implements OnInit {
       route : "/client-dashboard/"
     },
     {
-      title : "Journal",
+      title : "Trades",
       icon : "fa-book",
       route : "/client-dashboard/journal"
     },
@@ -53,7 +53,7 @@ export class UserSidenavComponent implements OnInit {
     {
       title : "Strategy",
       icon : "fa-calendar",
-      route : "/client-dashboard/calendar"
+      route : "/client-dashboard/strategy"
     },
     {
       title : "Event",

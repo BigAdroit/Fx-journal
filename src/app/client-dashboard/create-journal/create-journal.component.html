@@ -1,6 +1,6 @@
 <div class="lg:p-12">
     <div>
-        <p class="w-full text-xl font-fira font-bold bg-deep-blue uppercase text-white rounded-xl shadow-sm p-4 shadow-[white]"> Add Trade to your Journal</p>
+        <p class="w-full text-xl font-fira font-bold bg-[#1d7fcc] uppercase text-white rounded-xl shadow-sm p-4 shadow-[white]"> Add Trade to your Journal</p>
     </div>
     <div class="w-full my-12">
         <form [formGroup]="journalForm" (ngSubmit)="createJournal(journalForm.value)">
@@ -14,6 +14,42 @@
                     <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Trade Date and Time </label>
                     <input type="datetime-local" formControlName="trade_date_time" placeholder="Currency Pair" class="input  focus:border-0 text-[14px] input-bordered input-primary w-full" />
                     <span *ngIf="journalForm.get('trade_date_time')?.errors?.['required'] && journalForm.get('trade_date_time')?.touched" class="text-[red] text-[14px]" > This field is required</span>
+                </div>
+            </div>
+
+            <div class="flex w-full space-x-12 mt-4">
+                <div class="w-full md:w-1/2">
+                    <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Strategy </label>
+                    <select class="select select-primary w-full " formControlName="strategy">
+                        <option disabled selected> Select Strategy </option>
+                        <option value="{{strategy._id}}" *ngFor="let strategy of strategies">{{strategy.strategy_name}}</option>
+                    </select>  
+                    <span *ngIf="journalForm.get('strategy')?.errors?.['required'] && journalForm.get('strategy')?.touched" class="text-[red] text-[14px]" > This field is required</span>              
+                </div>
+                <div class="w-full md:w-1/2">
+                    <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Time Frame </label>
+                    <select formControlName="timeframe" class="select select-primary w-full">
+                        <option disabled selected> Select Option </option>
+                        <option value="{{timeframe}}" *ngFor="let timeframe of timeframes">{{timeframe}}</option>
+                        
+                    </select>
+                    <span *ngIf="journalForm.get('timeframe')?.errors?.['required'] && journalForm.get('timeframe')?.touched" class="text-[red] text-[14px]" > This field is required</span>              
+  
+                </div>
+            </div>
+
+            <div class="flex w-full space-x-12 mt-4">
+                <div class="w-full md:w-1/2">
+                    <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Trading Session </label>
+                    <select class="select select-primary w-full " formControlName="trading_session">
+                        <option disabled selected> Select Trading Session </option>
+                        <option value="{{session}}" *ngFor="let session of tradingSession">{{session}}</option>
+                    </select>  
+                    <span *ngIf="journalForm.get('trading_session')?.errors?.['required'] && journalForm.get('trading_session')?.touched" class="text-[red] text-[14px]" > This field is required</span>              
+                </div>
+                <div class="w-full md:w-1/2">
+                    <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Pips  </label>
+                    <input type="number" placeholder="Pips" class="input w-full focus:border-0 text-[14px] input-bordered input-primary" />
                 </div>
             </div>
 

@@ -1,0 +1,29 @@
+<div class="lg:p-12 p-2 h-screen">
+    <div>
+        <p class="w-full  font-fira bg-[#1d7fcc] uppercase text-white rounded-xl shadow-sm py-1 px-8 shadow-[white]"> Add To Your Strategy</p>
+    </div>
+    <div class="w-full my-12">
+        <form [formGroup]="strategyForm" (ngSubmit)="createStrategy(strategyForm.value)">
+            <div class="w-full">
+                <div class="w-full">
+                    <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Strategy Name </label>
+                    <input type="text" formControlName="strategy_name" placeholder="Strategy Name" class="input w-full focus:border-0 text-[14px] input-bordered input-primary" />
+                    <span *ngIf="strategyForm.get('strategy_name')?.errors?.['required'] && strategyForm.get('strategy_name')?.touched" class="text-[red] text-[14px]" > Strategy name is requred</span>
+                </div>
+            </div>
+            
+            <div class="w-full my-4">
+                <div class="w-full">
+                    <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Strategy Description </label>
+                    <textarea cols="30" rows="5" formControlName="description" class="textarea textarea-primary w-full focus:border-0" placeholder="Strategy Description"></textarea> 
+                    <span *ngIf="strategyForm.get('description')?.errors?.['required'] && strategyForm.get('description')?.touched" class="text-[red] text-[14px]" > This field is required</span>
+                </div>
+            </div>
+
+            <div class="mt-12">
+                <button type="submit" [disabled]="strategyForm.invalid" class="btn btn-active btn-primary px-16 hover:bg-deep-blue"> Submit  </button>
+            </div>
+
+        </form>
+    </div>
+</div>

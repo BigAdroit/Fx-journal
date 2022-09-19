@@ -14,7 +14,7 @@ export class NotificationService {
   config : MatSnackBarConfig = {
     duration : 5000,
     horizontalPosition : 'right',
-    verticalPosition : 'top'
+    verticalPosition : 'bottom'
   }
    subject = new BehaviorSubject({content:"", type:""})
   notify(data:any) {

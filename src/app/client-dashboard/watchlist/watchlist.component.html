@@ -32,126 +32,36 @@
             <button class="btn btn-active">Export</button>
         </div>
     </div>
-    <div class="overflow-x-auto" data-aos="fade-up">
-        <table class="table table-compact w-full">
-          <thead>
-            <tr>
-              <th>Currency Pair</th> 
-              <th>Date</th> 
-              <th>Long/Short</th> 
-              <th>Lot Size</th>
-              <th>Entry</th> 
-              <th>Take Profit</th> 
-              <th>Stop Loss</th>
-              <th>Exit</th>
-              <th>Setup</th>
-              <th></th>
-            </tr>
-          </thead> 
-          <tbody>
-                <tr>
-                    <td>USDJPY</td> 
-                    <td>12.07.2022 10:15am</td> 
-                    <td>Long</td> 
-                    <td>0.01</td>
-                    <td>1.234567</td> 
-                    <td>1.334567</td> 
-                    <td>1.232567</td>
-                    <td>1.33456</td>
-                    <td >Pull back trade </td>
-                    <td>
-                        <div class="flex space-x-4">
-                            <button class="btn btn-active btn-primary">view  <i class="fa fa-eye text-2xl ml-2" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </td>
+    <div class="w-full overflow-scroll bg-white rounded">
+        <table class="border-2 font-fira text-[14px] rounded-xl font-normal tracking-wide" id="trade">
+            <thead>
+                <tr class="border-1" >
+                    <th> No </th>
+                    <th> Curreny Pair </th>
+                    <th> Strategy </th>
+                    <th> Time Frame  </th>
+                    <th> Entry Price </th>
+                    <th> High</th>
+                    <th> Low </th>
+                    <th> Market Condition</th>
+                    <th> Description</th>
+                    <th> Action </th>
                 </tr>
-                <tr>
-                    <td>USDJPY</td> 
-                    <td>12.07.2022 10:15am</td> 
-                    <td>Long</td> 
-                    <td>0.01</td>
-                    <td>1.234567</td> 
-                    <td>1.334567</td> 
-                    <td>1.232567</td>
-                    <td>1.33456</td>
-                    <td >Pull back trade </td>
-                    <td>
-                        <div class="flex space-x-4">
-                            <button class="btn btn-active btn-primary">view  <i class="fa fa-eye text-2xl ml-2" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </td>
+            </thead>
+            <tbody>
+                <tr class="cursor-pointer" *ngFor="let watchlist of watchlists index as i">
+                    <td> {{ i + 1 }} </td>
+                    <td class="uppercase"> {{watchlist?.currency_pair | uppercase}} </td>
+                    <td> {{watchlist?.strategy}} </td>
+                    <td> {{watchlist?.timeframe}} </td>
+                    <td> {{watchlist?.entry_price}} </td>
+                    <td> {{watchlist?.high}} </td>
+                    <td> {{watchlist?.low}}</td>
+                    <td> {{watchlist?.market_condition}} </td>
+                    <td> {{watchlist?.description}} </td>
+                    <td> Remove </td>
                 </tr>
-                <tr>
-                    <td>USDJPY</td> 
-                    <td>12.07.2022 10:15am</td> 
-                    <td>Long</td> 
-                    <td>0.01</td>
-                    <td>1.234567</td> 
-                    <td>1.334567</td> 
-                    <td>1.232567</td>
-                    <td>1.33456</td>
-                    <td >Pull back trade </td>
-                    <td>
-                        <div class="flex space-x-4">
-                            <button class="btn btn-active btn-primary">view  <i class="fa fa-eye text-2xl ml-2" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>USDJPY</td> 
-                    <td>12.07.2022 10:15am</td> 
-                    <td>Long</td> 
-                    <td>0.01</td>
-                    <td>1.234567</td> 
-                    <td>1.334567</td> 
-                    <td>1.232567</td>
-                    <td>1.33456</td>
-                    <td >Pull back trade </td>
-                    <td>
-                        <div class="flex space-x-4">
-                            <button class="btn btn-active btn-primary">view  <i class="fa fa-eye text-2xl ml-2" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>USDJPY</td> 
-                    <td>12.07.2022 10:15am</td> 
-                    <td>Long</td> 
-                    <td>0.01</td>
-                    <td>1.234567</td> 
-                    <td>1.334567</td> 
-                    <td>1.232567</td>
-                    <td>1.33456</td>
-                    <td >Pull back trade </td>
-                    <td>
-                        <div class="flex space-x-4">
-                            <button class="btn btn-active btn-primary">view  <i class="fa fa-eye text-2xl ml-2" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>USDJPY</td> 
-                    <td>12.07.2022 10:15am</td> 
-                    <td>Long</td> 
-                    <td>0.01</td>
-                    <td>1.234567</td> 
-                    <td>1.334567</td> 
-                    <td>1.232567</td>
-                    <td>1.33456</td>
-                    <td >Pull back trade </td>
-                    <td>
-                        <div class="flex space-x-4">
-                            <button class="btn btn-active btn-primary">view  <i class="fa fa-eye text-2xl ml-2" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-          </tbody>
+            </tbody>
         </table>
-      </div>
+    </div>
 </div>

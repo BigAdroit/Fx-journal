@@ -33,3 +33,21 @@
   }
 // html, body { height: 100%; }
 // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #d7edf8; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #020d49; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #020d49; 
+}

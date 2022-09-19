@@ -1,0 +1,42 @@
+<div class="lg:p-12 p-2 ">
+    <div class=" flex justify-end my-2">
+        <button class="btn btn-active btn-primary" routerLink="/client-dashboard/create-strategy">Add to Strategy  <i class="fa fa-plus text-2xl ml-2" aria-hidden="true"></i></button>
+    </div>
+    <div class=" hidden lg:grid grid-cols-5 space-x-8 items-end mb-2">
+        <div class="my-2">
+            <select class="select select-primary w-full max-w-xs">
+                <option disabled selected> Filter By</option>
+                <option>Currency Pair</option>
+                <option>Lost</option>
+                <option>Profit</option>
+                <option>Date</option>
+                <option>Lots size</option>
+            </select>
+        </div>
+        <div class="my-2">
+            <input type="text" placeholder="Search..." class="input input-bordered input-primary w-full max-w-xs" />
+        </div>
+        <div class="my-2 flex justify-end">
+            <button class="btn btn-active">Export Excel</button>
+        </div>
+    </div>
+
+      <div class="w-full bg-white rounded">
+        <table class="border-2 font-fira text-[14px] rounded-xl font-normal tracking-wide" id="trade">
+            <thead>
+                <tr class="border-1" >
+                    <th> No </th>
+                    <th> Strategy Name</th>
+                    <th> Strategy Description </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="cursor-pointer" *ngFor="let strategy of strategies; index as i">
+                  <td> {{i+ 1}} </td>
+                  <td> {{strategy?.strategy_name}} </td>
+                  <td  class="w-[70%]"> {{strategy?.description}} </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,5 +1,7 @@
+import { isNgTemplate } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { JournalService } from 'src/app/service/data/journal/journal.service';
+import { StrategyService } from 'src/app/service/data/strategy/strategy.service';
 import * as XLSX from "xlsx"
 
 @Component({
@@ -14,12 +16,13 @@ export class JournalComponent implements OnInit {
   user_id = this.parsedPayload.info._id 
   journalList : any
   constructor(
-    private journalService  : JournalService
+    private journalService  : JournalService,
+    private strategyService : StrategyService
   ) { }
 
   ngOnInit(): void {
     this.journalService.getUserJournal().subscribe((res)=> {
-      this.journalList = res.payload
+      this.journalList = res.payload        
     })
   }
   

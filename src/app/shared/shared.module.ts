@@ -31,6 +31,15 @@ import { LoaderComponent } from './ui/loader/loader.component';
 import { ForexComponent } from './component/forex/forex.component';
 import { EditNameComponent } from './ui/edit-name/edit-name.component';
 import { ConfirmationComponent } from './ui/confirmation/confirmation.component';
+import { ViewMonthlyAnalysisBarChartComponent } from './component/view-monthly-analysis-bar-chart/view-monthly-analysis-bar-chart.component';
+import { PLMonthlyAnalysisComponent } from './ui/p-l-monthly-analysis/p-l-monthly-analysis.component';
+import { EquityMontlyAnalysisComponent } from './ui/equity-montly-analysis/equity-montly-analysis.component';
+import { MonthlyCurrencyPerformanceComponent } from './ui/monthly-currency-performance/monthly-currency-performance.component';
+import { MonthlyStrategyPerformamceComponent } from './ui/monthly-strategy-performamce/monthly-strategy-performamce.component';
+import { LongShortMonthlyPerformanceComponent } from './ui/long-short-monthly-performance/long-short-monthly-performance.component';
+import { TradingSessionMonthlyAnalysisComponent } from './ui/trading-session-monthly-analysis/trading-session-monthly-analysis.component';
+import { NoDataComponent } from './ui/no-data/no-data.component';
+import { TimeframeMonthlyPerformanceComponent } from './ui/timeframe-monthly-performance/timeframe-monthly-performance.component';
 
 
 
@@ -58,7 +67,16 @@ import { ConfirmationComponent } from './ui/confirmation/confirmation.component'
     LoaderComponent,
     ForexComponent,
     EditNameComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    ViewMonthlyAnalysisBarChartComponent,
+    PLMonthlyAnalysisComponent,
+    EquityMontlyAnalysisComponent,
+    MonthlyCurrencyPerformanceComponent,
+    MonthlyStrategyPerformamceComponent,
+    LongShortMonthlyPerformanceComponent,
+    TradingSessionMonthlyAnalysisComponent,
+    NoDataComponent,
+    TimeframeMonthlyPerformanceComponent
   ],
   imports: [
     CommonModule,
@@ -81,7 +99,16 @@ import { ConfirmationComponent } from './ui/confirmation/confirmation.component'
     AdminHeadBannerComponent,
     LineChartComponent,
     BarChartComponent,
-    LoaderComponent
+    LoaderComponent,
+    ViewMonthlyAnalysisBarChartComponent,
+    PLMonthlyAnalysisComponent,
+    EquityMontlyAnalysisComponent,
+    MonthlyCurrencyPerformanceComponent,
+    MonthlyStrategyPerformamceComponent,
+    LongShortMonthlyPerformanceComponent,
+    TradingSessionMonthlyAnalysisComponent,
+    NoDataComponent,
+    TimeframeMonthlyPerformanceComponent
 
 
   ]

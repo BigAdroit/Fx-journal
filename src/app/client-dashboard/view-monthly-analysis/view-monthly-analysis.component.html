@@ -1,0 +1,144 @@
+<div class="p-2 lg:p-12">
+    <p class="py-2 rounded px-12 bg-deep-blue text-white text-fira"> Monthly Report </p>
+    <div class="block md:flex md:pt-8 md:space-x-4 ">
+        <div class="w-full md:w-[40%] my-4">
+            <div class="overflow-x-auto">
+                <table class="table w-full">
+                  <tbody>
+                    <!-- row 1 -->
+                    <tr>
+                      <td class="bg-[#6979d3] text-white">Profit/Loss</td>
+                      <td class="font-fira font-bold">102345pips</td>
+                    </tr>
+                    <!-- row 2 -->
+                    <tr>
+                      <td class="bg-[#6979d3] text-white"> % Gain/Loss</td>
+                      <td class="font-fira font-bold"> 72.89%</td>
+                    </tr>
+                    <!-- row 3 -->
+                    <tr>
+                      <td class="bg-[#6979d3] text-white">Winning Rate</td>
+                      <td class="font-fira font-bold">80%</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-[#6979d3] text-white">Average Loss</td>
+                        <td class="font-fira font-bold"> 234 </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-[#6979d3] text-white">Average Win</td>
+                        <td class="font-fira font-bold"> 234 </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+        </div>
+        <div class="w-full md:w-[60%] bg-white rounded-xl px-4">
+            <p class="font-fira font-bold"> Equity Curve</p>
+            <app-view-monthly-analysis-bar-chart></app-view-monthly-analysis-bar-chart>
+        </div>
+    </div>
+
+    <div class="block md:flex md:py-4 md:space-x-4 ">
+        <div class="w-full md:w-[30%] bg-white rounded-xl px-4 my-2">
+                <p class="font-fira font-bold"> Trade Performamce</p>
+                <app-p-l-monthly-analysis></app-p-l-monthly-analysis>
+        </div>
+        <div class="w-full md:w-[70%] bg-white rounded-xl px-4">
+            <p class="font-fira font-bold"> Strategy Performamce</p>
+            <div class="w-full ">
+              <app-monthly-strategy-performamce></app-monthly-strategy-performamce>
+            </div>
+        </div>
+    </div>
+
+    <div class="block md:flex md:py-4 md:space-x-4">
+      <div class="w-full md:w-[70%] bg-white rounded-xl px-4">
+          <p class="font-fira font-bold"> Currency Pair Performance</p>
+          <div class="w-full ">
+            <app-monthly-currency-performance></app-monthly-currency-performance>
+          </div>
+      </div>
+      <div class="w-full md:w-[30%] bg-white rounded-xl px-4 my-2">
+        <p class="font-fira font-bold"> Timeframe Performance</p>
+        <app-timeframe-monthly-performance></app-timeframe-monthly-performance>
+      </div>
+  </div>
+
+  <div class="block md:flex md:py-4 md:space-x-4 ">
+    <div class="w-full md:w-[30%] bg-white rounded-xl px-4 my-2">
+      <p class="font-fira font-bold"> Long/Short Performance</p>
+      <app-long-short-monthly-performance></app-long-short-monthly-performance>
+    </div>
+    <div class="w-full md:w-[70%] bg-white rounded-xl px-4">
+        <p class="font-fira font-bold"> Trading Session Performamce</p>
+        <div class="w-full ">
+          <app-trading-session-monthly-analysis></app-trading-session-monthly-analysis>
+        </div>
+    </div>
+</div>
+
+    <div class="w-full overflow-scroll bg-white">
+        <table class="border-2 font-fira text-[14px] font-normal tracking-wide" id="trade">
+            <thead>
+                <tr class="border-1">
+                    <th> No </th>
+                    <th> Entry Date/Time</th>
+                    <th> Position </th>
+                    <th>Lot Size </th>
+                    <th> Curreny Pair </th>
+                    <th> Strategy </th>
+                    <th> Time Frame  </th>
+                    <th> Entry Price </th>
+                    <th> Stop Loss</th>
+                    <th> Take Profit </th>
+                    <th> Pips</th>
+                    <th> Win/Loss</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="cursor-pointer">
+                    <td> 1 </td>
+                    <td> 12.2.2022 6:00am </td>
+                    <td> Short </td>
+                    <td> 0.2 </td>
+                    <td class="uppercase"> eurusd </td>
+                    <td> Breakout $ Retest</td>
+                    <td> 15Min </td>
+                    <td> 1.2345 </td>
+                    <td> 1.3467 </td>
+                    <td> 1.23456 </td>
+                    <td> 234 </td>
+                    <td class="text-[white] bg-[green] "> Win </td>
+                </tr>
+                <tr class="cursor-pointer">
+                  <td> 1 </td>
+                  <td> 12.2.2022 6:00am </td>
+                  <td> Short  </td>
+                  <td> 0.2 </td>
+                  <td class="uppercase"> eurusd </td>
+                  <td> Breakout $ Retest</td>
+                  <td> 15Min </td>
+                  <td> 1.2345 </td>
+                  <td> 1.3467 </td>
+                  <td> 1.23456 </td>
+                  <td> 234 </td>
+                  <td class="text-[white] bg-[red] "> Loss </td>
+              </tr>
+              <tr class="cursor-pointer">
+                <td> 1 </td>
+                <td> 12.2.2022 6:00am </td>
+                <td> Long   </td>
+                <td> 0.2 </td>
+                <td class="uppercase"> eurusd </td>
+                <td> Breakout $ Retest</td>
+                <td> 15Min </td>
+                <td> 1.2345 </td>
+                <td> 1.3467 </td>
+                <td> 1.23456 </td>
+                <td> 234 </td>
+                <td class="text-[white] bg-[red] "> Loss </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

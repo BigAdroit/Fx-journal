@@ -2,7 +2,7 @@
     <div class="lg:block top-[50px] lg:top-0 w-[250px] z-30 lg:w-[20%] fixed lg:h-screen " [class.hidden]="!showMenu">
         <app-user-sidenav (closeDiv)="closeOpenMenu()"></app-user-sidenav>
     </div>
-    <div class="ml-0 w-full lg:ml-[20%] lg:w-[80%] bg-gray-shade-two h-screen overflow-scroll" >
+    <div class="ml-0 w-full lg:ml-[20%] lg:w-[80%] bg-gray-shade-two" >
         <app-admin-head-banner (toggleClick)="showMenu = !showMenu" [iconToggle]="!showMenu"></app-admin-head-banner>
         <router-outlet></router-outlet>
     </div>

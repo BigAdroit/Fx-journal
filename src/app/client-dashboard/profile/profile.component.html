@@ -7,35 +7,31 @@
         <div class="bg-white  rounded-xl px-2 py-4">
             <div class="flex justify-between border-b border-black items-center py-2 px-2">
                 <p class="font-fira font-medium text-[14px]"> Email</p>
-                <p class="font-fira font-medium text-[14px]"> aluginseyi@gmail.com (<span class="text-blue cursor-pointer" (click)="openModal()">  change</span> )</p>
+                <p class="font-fira font-medium text-[14px]"> {{userData?.email || "Badoo"}} (<span class="text-blue cursor-pointer" (click)="openModal()">  change</span> )</p>
             </div>
             <div class="flex justify-between border-b border-black items-center py-2 px-2">
                 <p class="font-fira font-medium text-[14px]">Phone </p>
-                <p class="font-fira font-medium text-[14px]"> +234 8164967808 (<span class="text-blue cursor-pointer">  change</span> )</p>
+                <p class="font-fira font-medium text-[14px]"> {{userData?.phone ||  "+234 8164967808"}}  (<span class="text-blue cursor-pointer">  change</span> )</p>
             </div>
             <div class="flex justify-between border-b border-black items-center py-2 px-2">
                 <p class="font-fira font-medium text-[14px]"> Name</p>
-                <p class="font-fira font-medium text-[14px]"> Alugbin Oluwaseyi (<span class="text-blue cursor-pointer">  change</span> )</p>
+                <p class="font-fira font-medium text-[14px]"> {{userData?.firstname }} {{userData?.lastname}} (<span class="text-blue cursor-pointer">  change</span> )</p>
             </div>
             <div class="flex justify-between border-b border-black items-center py-2 px-2">
-                <p class="font-fira font-medium text-[14px]">Birthdate </p>
-                <p class="font-fira font-medium text-[14px]"> Alugbin Oluwaseyi (<span class="text-blue cursor-pointer">  change</span> )</p>
+                <p class="font-fira font-medium text-[14px]"> D O B </p>
+                <p class="font-fira font-medium text-[14px]"> {{userData?.date_of_birth || "Nill"}} (<span class="text-blue cursor-pointer">  change</span> )</p>
             </div>
             <div class="flex justify-between border-b border-black items-center py-2 px-2">
                 <p class="font-fira font-medium text-[14px]"> Address</p>
-                <p class="font-fira font-medium text-[14px]"> Alugbin Oluwaseyi (<span class="text-blue cursor-pointer">  change</span> )</p>
+                <p class="font-fira font-medium text-[14px]"> {{userData?.address || "NIll"}} (<span class="text-blue cursor-pointer">  change</span> )</p>
             </div>
             <div class="flex justify-between border-b border-black items-center py-2 px-2">
                 <p class="font-fira font-medium text-[14px]"> Verification status</p>
-                <p class="font-fira font-medium text-[14px]"> Alugbin Oluwaseyi (<span class="text-blue cursor-pointer">  change</span> )</p>
+                <p class="font-fira font-medium text-[14px]"> Verified</p>
             </div>
             <div class="flex justify-between border-b border-black items-center py-2 px-2">
                 <p class="font-fira font-medium text-[14px]"> Contest nickname</p>
-                <p class="font-fira font-medium text-[14px]"> none (<span class="text-blue cursor-pointer">  Add </span> )</p>
-            </div>
-            <div class="flex justify-between border-b border-black items-center py-2 px-2">
-                <p class="font-fira font-medium text-[14px]"> Name</p>
-                <p class="font-fira font-medium text-[14px]"> Alugbin Oluwaseyi (<span class="text-blue cursor-pointer">  change</span> )</p>
+                <p class="font-fira font-medium text-[14px]"> {{userData?.nickname  || "Nill"}} </p>
             </div>
         </div>
     </div>

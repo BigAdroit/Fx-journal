@@ -19,6 +19,9 @@ import { ReadNewsComponent } from './read-news/read-news.component';
 import { CreateJournalComponent } from './create-journal/create-journal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreatwWatchlistComponent } from './creatw-watchlist/creatw-watchlist.component';
+import { ViewMonthlyAnalysisComponent } from './view-monthly-analysis/view-monthly-analysis.component';
+import { StrategyComponent } from './strategy/strategy.component';
+import { CreateStrategyComponent } from './create-strategy/create-strategy.component';
 
 
 @NgModule({
@@ -35,7 +38,10 @@ import { CreatwWatchlistComponent } from './creatw-watchlist/creatw-watchlist.co
     ViewJournalComponent,
     ReadNewsComponent,
     CreateJournalComponent,
-    CreatwWatchlistComponent
+    CreatwWatchlistComponent,
+    ViewMonthlyAnalysisComponent,
+    StrategyComponent,
+    CreateStrategyComponent
   ],
   imports: [
     CommonModule,

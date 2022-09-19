@@ -24,7 +24,7 @@ export class LineChartComponent implements OnInit {
         this.dataValue = res.payload.value
         console.log(this.month)
     
-        const t_ctx = document.getElementById('myChart') as unknown as any;
+        const t_ctx = document.getElementById('myLineChart') as unknown as any;
         const ctx = t_ctx.getContext('2d');
         const myChart = new Chart(ctx, {
         type: 'bar',
@@ -61,7 +61,17 @@ export class LineChartComponent implements OnInit {
                 y: {
                     beginAtZero: true
                 }
-            }
+            },
+            plugins: {
+              title: {
+                display: true,
+                text: 'Chart.js Bar Chart - Stacked'
+              },
+            },
+            responsive: true,
+            interaction: {
+            intersect: false,
+             },
         }
     });
     
