@@ -40,6 +40,10 @@ import { LongShortMonthlyPerformanceComponent } from './ui/long-short-monthly-pe
 import { TradingSessionMonthlyAnalysisComponent } from './ui/trading-session-monthly-analysis/trading-session-monthly-analysis.component';
 import { NoDataComponent } from './ui/no-data/no-data.component';
 import { TimeframeMonthlyPerformanceComponent } from './ui/timeframe-monthly-performance/timeframe-monthly-performance.component';
+import { EditDobComponent } from './ui/edit-dob/edit-dob.component';
+import { EditPhoneComponent } from './ui/edit-phone/edit-phone.component';
+import { EditAddressComponent } from './ui/edit-address/edit-address.component';
+import { UploadComponent } from './ui/upload/upload.component';
 
 
 
@@ -76,7 +80,11 @@ import { TimeframeMonthlyPerformanceComponent } from './ui/timeframe-monthly-per
     LongShortMonthlyPerformanceComponent,
     TradingSessionMonthlyAnalysisComponent,
     NoDataComponent,
-    TimeframeMonthlyPerformanceComponent
+    TimeframeMonthlyPerformanceComponent,
+    EditDobComponent,
+    EditPhoneComponent,
+    EditAddressComponent,
+    UploadComponent
   ],
   imports: [
     CommonModule,

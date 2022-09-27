@@ -11,7 +11,9 @@ import { AuthService } from 'src/app/service/data/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  password = "password"
+  icon = "fa-eye-slash"
+  openEye :boolean = false
   constructor(
     private notification : NotificationService,
     private route : Router,
@@ -27,11 +29,11 @@ export class LoginComponent implements OnInit {
     this.authService.loginFunction(data).subscribe((res: any)=> {
       console.log(res.token)
       if(res.hasErrors) {
-        this.notification.notify({content: res.description, type: 'danger'})
+        this.notification.notify({content: res.description, title: "An Error Occur", type: 'error'})
       }else {
         console.log(res)
         localStorage.setItem("access_token", JSON.stringify(res.payload))
-        this.notification.notify({content: res.description, type:'success'})
+        this.notification.notify({content: res.description, title: "Login Success", type:'success'})
         this.route.navigate(['/client-dashboard'])
         // this.closeLoginModal()
       }
@@ -47,4 +49,14 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  toggleIconShow() {
+    this.openEye = !this.openEye
+    if(!this.openEye) {
+      this.icon = "fa-eye"
+      this.password = "text"
+    } else {
+      this.password = "password"
+      this.icon = "fa-eye-slash"
+    }
+  }
 }

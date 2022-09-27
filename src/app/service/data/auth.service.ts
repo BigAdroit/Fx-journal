@@ -1,33 +1,34 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
+  baseUrl = environment.testBaseApi
   constructor(
     private http : HttpClient
   ) { }
 
   
   regFunction(data: any) {
-    const url = "http://localhost:3000/auth//create-new-user"
+    const url = `${this.baseUrl}auth//create-new-user`
     return this.http.post(url, data)
   }
 
   loginFunction(data: any) {
-    const url = "http://localhost:3000/auth/login"
+    const url = `${this.baseUrl}auth/login`
     return this.http.post(url, data)
   }
 
   forgotPassword(data: any) {
-    const url = 'http://localhost:3000/auth/reset-password'
+    const url = `${this.baseUrl}auth/reset-password`
     return this.http.post<any>(url, data)
   }
 
   resetCode(data:any) {
-    const url = 'http://localhost:3000/auth/reset-password-verification-code'
+    const url =`${this.baseUrl}auth/reset-password-verification-code`
     return this.http.post<any>(url, data)
   }
 

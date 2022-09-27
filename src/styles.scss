@@ -3,6 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "~ng-zorro-antd/ng-zorro-antd.css";
 
 .bg-edu-man {
     background-image:  linear-gradient(rgba(1,12,72, 0.7), rgba(1,12,72, 0.8), rgba(1,12,72, 0.5)), url('./assets/images/bg-edu-page.jpg');
@@ -34,17 +35,22 @@
 // html, body { height: 100%; }
 // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
+  
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   background: #d7edf8; 
+  width:5px;
+  height:5px;
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #020d49; 
+  border-radius: 5px;
+ 
 }
 
 /* Handle on hover */

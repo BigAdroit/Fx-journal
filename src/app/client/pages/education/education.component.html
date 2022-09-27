@@ -1,6 +1,6 @@
 <app-client-header></app-client-header>
 <app-hero text="Fx journal Education & Analysis"></app-hero>
-<section class="mt-[-5rem] bg-white mx-8 flex flex-col lg:flex-row shadow-2xl" data-aos="fade-up">
+<section class="mt-[-5rem] bg-white md:mx-8 flex flex-col lg:flex-row shadow-2xl" data-aos="fade-up">
     <div class="w-full lg:w-1/4  px-4 py-4 cursor-pointer">
         <div *ngFor="let education of educationMaterialList" (click)="onSelect(education)" [class.bg-gray-shade-two]="education.isActive" class="flex space-x-8 items-center px-4 py-2 rounded my-[5px]  hover:bg-gray-shade-two">
             <div class=" w-[2px] h-9 bg-deep-blue flex justify-center items-center relative">

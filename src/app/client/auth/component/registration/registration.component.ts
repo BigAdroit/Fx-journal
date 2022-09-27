@@ -12,6 +12,9 @@ import { AuthService } from 'src/app/service/data/auth.service';
 })
 export class RegistrationComponent implements OnInit {
   regForm! : FormGroup
+  icon = "fa-eye-slash"
+  password = "password"
+  openEye : boolean = false
   constructor(
     private notification : NotificationService,
     private route : Router,
@@ -42,5 +45,16 @@ export class RegistrationComponent implements OnInit {
       password : new FormControl('', [Validators.required]),
 
     })
+  }
+
+  toggleIconShow() {
+    this.openEye = !this.openEye
+    if(!this.openEye) {
+      this.icon = "fa-eye"
+      this.password = "text"
+    } else {
+      this.password = "password"
+      this.icon = "fa-eye-slash"
+    }
   }
 }

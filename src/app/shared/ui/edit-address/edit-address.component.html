@@ -1,0 +1,11 @@
+<div class=" p-4 md:p-12 w-full md:w-[500px] rounded-lg">
+    <form [formGroup]="formGroup">
+        <div>
+            <label for=""> Address</label>
+            <textarea name="" id="" cols="30" rows="10" formControlName="address" class="input font-semibold focus:outline-none w-full input-bordered input-primary "> Your Address Here </textarea>
+        </div>
+        <div class="mt-12 flex justify-center">
+            <button class="btn btn-primary" [disabled]="formGroup.invalid" (click)="confrimationModal()">Submit</button>
+        </div>
+    </form>
+</div>

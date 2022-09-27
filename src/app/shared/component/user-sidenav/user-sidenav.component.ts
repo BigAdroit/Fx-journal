@@ -11,6 +11,7 @@ export class UserSidenavComponent implements OnInit {
   @Output() closeDiv = new EventEmitter()
   firstname : string = ""
   lastname : string = ""
+  avatar! : string 
   verificationStatus! : boolean 
   constructor(
     private dashboardService : DashboardService
@@ -25,6 +26,7 @@ export class UserSidenavComponent implements OnInit {
       this.firstname = res.payload.others.firstname
       this.lastname = res.payload.others.lastname
       this.verificationStatus = res.payload.others.isVerified
+      this.avatar = res.payload.others.avatar
       // console.log(res)
     })
   }

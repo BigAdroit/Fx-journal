@@ -1,28 +1,22 @@
 import { Injectable } from '@angular/core';
-import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
-import { BehaviorSubject } from 'rxjs';
-import { HttpClient } from '@angular/common/http'
+import { NzNotificationPlacement, NzNotificationService } from 'ng-zorro-antd/notification';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class NotificationService {
-
-  constructor(public snackBar : MatSnackBar, private http:HttpClient) { }
-
-  config : MatSnackBarConfig = {
-    duration : 5000,
-    horizontalPosition : 'right',
-    verticalPosition : 'bottom'
-  }
-   subject = new BehaviorSubject({content:"", type:""})
-  notify(data:any) {
-    this.subject.subscribe((res)=> {
-      this.config['panelClass'] = [res.type]
-      this.snackBar.open(res.content, '', this.config)
-    })
-
-    this.subject.next(data)
+  position :  NzNotificationPlacement = "bottomRight"
+  constructor(
+    private notification : NzNotificationService
+    ) { }
+  notify(res: any) {
+    
+      this.notification.create(
+        res.type,
+        res.title,
+        res.content,
+        { nzPlacement: this.position }
+      );
   }
 }

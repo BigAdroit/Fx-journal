@@ -7,23 +7,23 @@
         <div class="bg-white  rounded-xl px-2 py-4">
             <div class="flex justify-between border-b border-black items-center py-2 px-2">
                 <p class="font-fira font-medium text-[14px]"> Email</p>
-                <p class="font-fira font-medium text-[14px]"> {{userData?.email || "Badoo"}} (<span class="text-blue cursor-pointer" (click)="openModal()">  change</span> )</p>
+                <p class="font-fira font-medium text-[14px]"> {{userData?.email || "Badoo"}} (<span class="text-blue cursor-pointer" >  change</span> )</p>
             </div>
             <div class="flex justify-between border-b border-black items-center py-2 px-2">
                 <p class="font-fira font-medium text-[14px]">Phone </p>
-                <p class="font-fira font-medium text-[14px]"> {{userData?.phone ||  "+234 8164967808"}}  (<span class="text-blue cursor-pointer">  change</span> )</p>
+                <p class="font-fira font-medium text-[14px]"> {{userData?.phone ||  "+234 8164967808"}}  (<span class="text-blue cursor-pointer" (click)="openPhoneModal(userData?.phone)">  change</span> )</p>
             </div>
             <div class="flex justify-between border-b border-black items-center py-2 px-2">
                 <p class="font-fira font-medium text-[14px]"> Name</p>
-                <p class="font-fira font-medium text-[14px]"> {{userData?.firstname }} {{userData?.lastname}} (<span class="text-blue cursor-pointer">  change</span> )</p>
+                <p class="font-fira font-medium text-[14px]"> {{userData?.firstname }} {{userData?.lastname}} (<span class="text-blue cursor-pointer" (click)="openModal(userData?.firstname, userData?.lastname)">  change</span> )</p>
             </div>
             <div class="flex justify-between border-b border-black items-center py-2 px-2">
                 <p class="font-fira font-medium text-[14px]"> D O B </p>
-                <p class="font-fira font-medium text-[14px]"> {{userData?.date_of_birth || "Nill"}} (<span class="text-blue cursor-pointer">  change</span> )</p>
+                <p class="font-fira font-medium text-[14px]"> {{userData?.birthdate || "Nill"}} (<span class="text-blue cursor-pointer" (click)="openDOBModal(userData?.birthdate)">  change</span> )</p>
             </div>
             <div class="flex justify-between border-b border-black items-center py-2 px-2">
                 <p class="font-fira font-medium text-[14px]"> Address</p>
-                <p class="font-fira font-medium text-[14px]"> {{userData?.address || "NIll"}} (<span class="text-blue cursor-pointer">  change</span> )</p>
+                <p class="font-fira font-medium text-[14px]"> {{userData?.address || "NIll"}} (<span class="text-blue cursor-pointer" (click)="openAddressModal(userData?.address)">  change</span> )</p>
             </div>
             <div class="flex justify-between border-b border-black items-center py-2 px-2">
                 <p class="font-fira font-medium text-[14px]"> Verification status</p>
@@ -36,9 +36,9 @@
         </div>
     </div>
     <div class="w-full lg:w-[30%] border-2 border-white bg-[#e2e2e2]">
-        <img src="assets/images/trading-jet.png" class="w-full" alt="">
+        <img [src]="userData?.avatar || 'assets/images/trading-jet.png'" class="w-full" alt="">
         <div>
-            <p class="text-center font-fira font-medium"> My Avatar ( <span class="text-blue cursor-pointer"> change</span> | <span class="text-blue cursor-pointer">Remove</span> )</p>
+            <p class="text-center font-fira font-medium"> My Avatar ( <span class="text-blue cursor-pointer" (click)=openUploadModal()> change</span> | <span class="text-blue cursor-pointer">Remove</span> )</p>
         </div>
     </div>
 </div>

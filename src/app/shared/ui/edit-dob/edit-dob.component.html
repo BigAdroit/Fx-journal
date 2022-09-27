@@ -1,0 +1,11 @@
+<div class=" p-4 md:p-12 w-full md:w-[500px] rounded-lg">
+    <form [formGroup]="formGroup">
+        <div>
+            <label for=""> Date of Birth</label>
+            <input type="date" formControlName="birthdate" placeholder="Type here" class="input font-semibold focus:outline-none w-full input-bordered input-primary " />
+        </div>
+        <div class="mt-12 flex justify-center">
+            <button class="btn btn-primary" [disabled]="formGroup.invalid" (click)="confrimationModal()">Submit</button>
+        </div>
+    </form>
+</div>

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,17 +10,18 @@ export class LineChartService {
    payload = atob(this.token.split('.')[1]);   
    parsedPayload = JSON.parse(this.payload);
    id = this.parsedPayload.info._id 
+   baseUrl = environment.testBaseApi
   constructor(
     private http : HttpClient
   ) { }
 
   lineChart() {
-    const url = `http://localhost:3000/fx-journal/lineChart/${this.id}`
+    const url = `${this.baseUrl}fx-journal/lineChart/${this.id}`
     return this.http.get<any>(url)
   }
 
   getMonthlyAnalysis(month:number) {
-    const url = `http://localhost:3000/fx-journal/monthlyAnalysis/${this.id}/${month}`
+    const url = `${this.baseUrl}fx-journal/monthlyAnalysis/${this.id}/${month}`
     return this.http.get<any>(url)
   }
 }

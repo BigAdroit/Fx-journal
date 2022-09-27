@@ -4,12 +4,12 @@
             <img *ngIf="!toggleHamburger" src="assets/images/menu.svg"  class="w-8 h-8" alt="menu">
             <img *ngIf="toggleHamburger" src="assets/images/close.svg"  class="w-8 h-8" alt="close">
         </div>
-        <div> Logo</div>
+        <div>  </div>
         <div class="hidden space-x-4 items-center  lg:flex">
-            <app-base-button text="open account" class="uppercase rounded-3xl px-4 py-1 bg-blue text-gray-shade-two font-rubik  hover:text-white transition-all duration-500 hover:bg-deep-blue" (click)="openReg()"> </app-base-button>
-            <app-base-button text="login" class="uppercase rounded-3xl px-4 py-1 bg-gray-shade-two text-blue font-rubik  hover:text-white transition-all duration-500 hover:bg-deep-blue" (click)="openLogin()"></app-base-button>
+            <app-base-button text="open account" routerLink="/auth/registration" class="uppercase rounded-3xl px-4 py-1 bg-blue text-gray-shade-two font-rubik  hover:text-white transition-all duration-500 hover:bg-deep-blue" > </app-base-button>
+            <app-base-button text="login" routerLink="/auth" class="uppercase rounded-3xl px-4 py-1 bg-gray-shade-two text-blue font-rubik  hover:text-white transition-all duration-500 hover:bg-deep-blue"></app-base-button>
         </div>
-        <div class="lg:hidden" (click)="openLogin()">
+        <div class="lg:hidden" routerLink="/auth">
             <img src="assets/images/login.svg"  class="w-8 h-8" alt="login">
         </div>
     </div>
