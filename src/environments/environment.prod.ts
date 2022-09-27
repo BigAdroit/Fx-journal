@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  testBaseApi : "https://fx-track-backend.vercel.app/"
+
 };
