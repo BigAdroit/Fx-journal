@@ -1,4 +1,4 @@
-<div class="lg:p-12 p-2 ">
+<div class="lg:p-12 p-2" *ngIf="isEmpty">
     <div class=" flex justify-end my-2">
         <button class="btn btn-active btn-primary" routerLink="/client-dashboard/create-strategy">Add to Strategy  <i class="fa fa-plus text-2xl ml-2" aria-hidden="true"></i></button>
     </div>
@@ -40,3 +40,6 @@
         </table>
     </div>
 </div>
+<ng-container *ngIf="!isEmpty">
+    <app-no-data displayText="You have no strategy yet" (btnEvent)="navigate()" btnText="Create strategy"></app-no-data>
+</ng-container>

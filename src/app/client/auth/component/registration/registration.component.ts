@@ -30,12 +30,10 @@ export class RegistrationComponent implements OnInit {
       if(res.hasErrors) {
         this.notification.notify({content: res.description, type: 'danger'})
       }else {
+        this.route.navigate(['/auth'])        
         this.notification.notify({content: res.description, type:'success'})
-        // this.route.navigate(['/client-dashboard'])        
       }
     })
-    // this.notification.notify({content:"Registration Successfull", type:'success'})
-    console.log(data)
   }
   createForm() {
     this.regForm = new FormGroup({

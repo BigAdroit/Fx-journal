@@ -1,10 +1,10 @@
-<div class="lg:p-12">
+<div class="p-5 md:p-12">
     <div>
-        <p class="w-full text-xl font-fira font-bold bg-deep-blue uppercase text-white rounded-xl shadow-sm p-4 shadow-[white]"> Add To Your Market Watchlist</p>
+        <p class="w-full  font-fira bg-deep-blue uppercase text-white rounded shadow-sm py-1 px-8 shadow-[white]"> Add to your watchlist</p>
     </div>
-    <div class="w-full my-12">
+    <div class="w-full my-4">
         <form [formGroup]="watchlistForm" (ngSubmit)="createWatchlist(watchlistForm.value)">
-            <div class="flex w-full space-x-12">
+            <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row w-full md:space-x-12">
                 <div class="w-full md:w-1/2">
                     <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Currency Pair</label>
                     <input type="text" formControlName="currency_pair" placeholder="Currency Pair" class="input w-full focus:border-0 text-[14px] input-bordered input-primary" />
@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            <div class="flex w-full space-x-12 mt-4">
+            <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row w-full md:space-x-12 mt-4">
                 <div class="w-full md:w-1/2">
                     <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Time Frame </label>
                     <select formControlName="timeframe" class="select select-primary w-full">
@@ -41,7 +41,7 @@
                 </div>
             </div>
 
-            <div class="flex w-full space-x-12 mt-4">
+            <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row w-full md:space-x-12 mt-4">
                 <div class="w-full md:w-1/2">
                     <label for="" class="font-fira font-medium tracking-wide mb-2 block"> High </label>
                     <input type="number" formControlName="high" placeholder="High" class="input w-full focus:border-0 text-[14px] input-bordered input-primary" />
@@ -55,7 +55,7 @@
                 </div>
             </div>
 
-            <div class="flex w-full space-x-12 mt-4">
+            <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row w-full md:space-x-12 mt-4">
                 <div class="w-full md:w-1/2">
                     <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Entry Price </label>
                     <input type="number" formControlName="entry_price" placeholder="Entry Price" class="input w-full focus:border-0 text-[14px] input-bordered input-primary" />

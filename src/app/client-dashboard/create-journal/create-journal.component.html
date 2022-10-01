@@ -1,10 +1,10 @@
-<div class="lg:p-12">
+<div class="p-5 md:p-12">
     <div>
-        <p class="w-full text-xl font-fira font-bold bg-[#1d7fcc] uppercase text-white rounded-xl shadow-sm p-4 shadow-[white]"> Add Trade to your Journal</p>
+        <p class="w-full  font-fira bg-deep-blue uppercase text-white rounded shadow-sm py-1 px-8 shadow-[white]"> Log your Trade</p>
     </div>
-    <div class="w-full my-12">
+    <div class="w-full my-4">
         <form [formGroup]="journalForm" (ngSubmit)="createJournal(journalForm.value)">
-            <div class="flex w-full space-x-12">
+            <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row w-full md:space-x-12">
                 <div class="w-full md:w-1/2">
                     <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Currency Pair</label>
                     <input type="text" formControlName="currency_pair" placeholder="Currency Pair" class="input w-full focus:border-0 text-[14px] input-bordered input-primary" />
@@ -17,7 +17,7 @@
                 </div>
             </div>
 
-            <div class="flex w-full space-x-12 mt-4">
+            <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row w-full md:space-x-12">
                 <div class="w-full md:w-1/2">
                     <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Strategy </label>
                     <select class="select select-primary w-full " formControlName="strategy">
@@ -38,7 +38,7 @@
                 </div>
             </div>
 
-            <div class="flex w-full space-x-12 mt-4">
+            <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row w-full md:space-x-12">
                 <div class="w-full md:w-1/2">
                     <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Trading Session </label>
                     <select class="select select-primary w-full " formControlName="trading_session">
@@ -53,7 +53,7 @@
                 </div>
             </div>
 
-            <div class="flex w-full space-x-12 mt-4">
+            <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row w-full md:space-x-12">
                 <div class="w-full md:w-1/2">
                     <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Position Type </label>
                     <select class="select select-primary w-full " formControlName="position_type">
@@ -75,7 +75,7 @@
                 </div>
             </div>
 
-            <div class="flex w-full space-x-12 mt-4">
+            <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row w-full md:space-x-12">
                 <div class="w-full md:w-1/2">
                     <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Entry Price </label>
                     <input type="number" formControlName="entry_price" placeholder="Entry Price" class="input w-full focus:border-0 text-[14px] input-bordered input-primary" />
@@ -89,7 +89,7 @@
                 </div>
             </div>
 
-            <div class="flex w-full space-x-12 mt-4">
+            <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row w-full md:space-x-12">
                 <div class="w-full md:w-1/2">
                     <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Take Profit </label>
                     <input type="number" formControlName="take_profit" placeholder="Currency Pair" class="input w-full focus:border-0 text-[14px] input-bordered input-primary" />
@@ -104,7 +104,7 @@
                 </div>
             </div>
 
-            <div class="flex w-full space-x-12 mt-4">
+            <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row w-full md:space-x-12">
                 <div class="w-full md:w-1/2">
                     <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Lot Size </label>
                     <input type="number" formControlName="lot_size" placeholder="Lot Size" class="input w-full focus:border-0 text-[14px] input-bordered input-primary" />
@@ -130,7 +130,7 @@
                 </div>
             </div>
 
-            <div class="flex w-full space-x-12 mt-4">
+            <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row w-full md:space-x-12">
                 <div class="w-full md:w-1/2">
                     <label for="" class="font-fira font-medium tracking-wide mb-2 block"> Trade Setup </label>
                     <textarea formControlName="trade_setup" class="textarea textarea-primary w-full focus:border-0" placeholder="Trade Setup"></textarea> 

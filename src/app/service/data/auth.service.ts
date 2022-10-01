@@ -13,7 +13,7 @@ export class AuthService {
 
   
   regFunction(data: any) {
-    const url = `${this.baseUrl}auth//create-new-user`
+    const url = `${this.baseUrl}auth/create-new-user`
     return this.http.post(url, data)
   }
 

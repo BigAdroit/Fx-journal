@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StrategyService } from 'src/app/service/data/strategy/strategy.service';
 
 @Component({
@@ -8,8 +9,10 @@ import { StrategyService } from 'src/app/service/data/strategy/strategy.service'
 })
 export class StrategyComponent implements OnInit {
   strategies : any
+  isEmpty! : boolean 
   constructor(
-    private strategyService : StrategyService
+    private strategyService : StrategyService,
+    private router : Router
   ) { }
 
   ngOnInit(): void {
@@ -18,6 +21,15 @@ export class StrategyComponent implements OnInit {
       this.strategies = res.payload
 
     })
+
+    if(this.strategies?.length === 0 ) {
+      this.isEmpty = true
+    }else {
+      this.isEmpty = false
+    }
   }
 
+  navigate() {
+    this.router.navigate(["/client-dashboard/create-strategy"])
+  }
 }

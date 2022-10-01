@@ -29,7 +29,7 @@ export class InterceptorInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     this.loaderService.show()
 
-    if(request.url.search('/api/connect/token') == -1) {
+    if(request.url.search('/auth/create-new-user') == -1) {
       this.authToken = JSON.parse(localStorage.getItem("access_token")!);
 
       request = request.clone({

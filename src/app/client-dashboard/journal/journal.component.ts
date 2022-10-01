@@ -1,5 +1,6 @@
 import { isNgTemplate } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { JournalService } from 'src/app/service/data/journal/journal.service';
 import { StrategyService } from 'src/app/service/data/strategy/strategy.service';
 import * as XLSX from "xlsx"
@@ -15,15 +16,23 @@ export class JournalComponent implements OnInit {
   parsedPayload = JSON.parse(this.payload);
   user_id = this.parsedPayload.info._id 
   journalList : any
+  isEmpty! : boolean
   constructor(
     private journalService  : JournalService,
-    private strategyService : StrategyService
+    private strategyService : StrategyService,
+    private router : Router
   ) { }
 
   ngOnInit(): void {
     this.journalService.getUserJournal().subscribe((res)=> {
       this.journalList = res.payload        
     })
+
+    if(this.journalList?.length === 0 ) {
+      this.isEmpty = true
+    }else {
+      this.isEmpty = false 
+    }
   }
   
   exportSpreadSheet() {
@@ -35,5 +44,9 @@ export class JournalComponent implements OnInit {
       XLSX.writeFile(wb, "journalSheet.xlsx")
     })
     // const element = document.getElementById("table")
+  }
+
+  navigate() {
+    this.router.navigate(["/client-dashboard/create-journal"])
   }
 }
