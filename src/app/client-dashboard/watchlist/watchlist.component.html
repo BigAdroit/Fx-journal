@@ -1,4 +1,4 @@
-<div class="lg:p-12 p-2" *ngIf="isEmpty">
+<div class="lg:p-12 p-2" *ngIf="watchlists.length !== 0">
     <div class=" flex justify-end my-2">
         <button class="btn btn-active btn-primary" routerLink="/client-dashboard/create-watchlist">Add to watchlist  <i class="fa fa-plus text-2xl ml-2" aria-hidden="true"></i></button>
     </div>
@@ -67,6 +67,6 @@
     </div>
 
 </div>
-<ng-container *ngIf="!isEmpty">
+<ng-container *ngIf="watchlists.length === 0">
     <app-no-data displayText="Your Watchlist is empty" (btnEvent)="navigate()" btnText="Add to watchlist"></app-no-data>
 </ng-container>

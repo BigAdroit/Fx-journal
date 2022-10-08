@@ -77,68 +77,41 @@
     </div>
 </div>
 
-    <div class="w-full overflow-scroll bg-white">
-        <table class="border-2 font-fira text-[14px] font-normal tracking-wide" id="trade">
-            <thead>
-                <tr class="border-1">
-                    <th> No </th>
-                    <th> Entry Date/Time</th>
-                    <th> Position </th>
-                    <th>Lot Size </th>
-                    <th> Curreny Pair </th>
-                    <th> Strategy </th>
-                    <th> Time Frame  </th>
-                    <th> Entry Price </th>
-                    <th> Stop Loss</th>
-                    <th> Take Profit </th>
-                    <th> Pips</th>
-                    <th> Win/Loss</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="cursor-pointer">
-                    <td> 1 </td>
-                    <td> 12.2.2022 6:00am </td>
-                    <td> Short </td>
-                    <td> 0.2 </td>
-                    <td class="uppercase"> eurusd </td>
-                    <td> Breakout $ Retest</td>
-                    <td> 15Min </td>
-                    <td> 1.2345 </td>
-                    <td> 1.3467 </td>
-                    <td> 1.23456 </td>
-                    <td> 234 </td>
-                    <td class="text-[white] bg-[green] "> Win </td>
-                </tr>
-                <tr class="cursor-pointer">
-                  <td> 1 </td>
-                  <td> 12.2.2022 6:00am </td>
-                  <td> Short  </td>
-                  <td> 0.2 </td>
-                  <td class="uppercase"> eurusd </td>
-                  <td> Breakout $ Retest</td>
-                  <td> 15Min </td>
-                  <td> 1.2345 </td>
-                  <td> 1.3467 </td>
-                  <td> 1.23456 </td>
-                  <td> 234 </td>
-                  <td class="text-[white] bg-[red] "> Loss </td>
-              </tr>
-              <tr class="cursor-pointer">
-                <td> 1 </td>
-                <td> 12.2.2022 6:00am </td>
-                <td> Long   </td>
-                <td> 0.2 </td>
-                <td class="uppercase"> eurusd </td>
-                <td> Breakout $ Retest</td>
-                <td> 15Min </td>
-                <td> 1.2345 </td>
-                <td> 1.3467 </td>
-                <td> 1.23456 </td>
-                <td> 234 </td>
-                <td class="text-[white] bg-[red] "> Loss </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+<div class="w-full overflow-scroll bg-white rounded-xl">
+  <table class="border-2 font-fira text-[14px] rounded-xl font-normal tracking-wide" id="trade">
+      <thead>
+          <tr class="border-1" >
+              <th> No </th>
+              <th> Entry Date/Time</th>
+              <th> Position </th>
+              <th>Lot Size </th>
+              <th> Curreny Pair </th>
+              <th> Strategy </th>
+              <th> Time Frame  </th>
+              <th> Entry Price </th>
+              <th> Stop Loss</th>
+              <th> Take Profit </th>
+              <th> Pips</th>
+              <th> Win/Loss</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr class="cursor-pointer" routerLink="/client-dashboard/view-journal/{{journal._id}}" *ngFor="let journal of journalList index as i">
+              <td> {{ i + 1 }} </td>
+              <td> {{journal?.trade_date_time | date : "dd-MM-yyyy   h:mm:s:a"}} </td>
+              <td> {{journal?.position_type | uppercase}} </td>
+              <td> {{journal?.lot_size}} </td>
+              <td class="uppercase"> {{journal?.currency_pair | uppercase}} </td>
+              <td> {{journal?.strategy}} </td>
+              <td> {{journal?.timeframe}} </td>
+              <td> {{journal?.entry_price}} </td>
+              <td> {{journal?.stop_loss}} </td>
+              <td> {{journal?.take_profit}}</td>
+              <td> 234 </td>
+              <td class="text-white" [ngClass]="journal?.profit_loss === 'profit'? 'bg-[green]' : 'bg-[red]'"> {{journal?.profit_loss === 'profit'? 'Win' : 'Loss'}} </td>
+              
+          </tr>
+      </tbody>
+  </table>
+</div>
 </div>

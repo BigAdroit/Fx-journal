@@ -25,7 +25,8 @@ export class JournalComponent implements OnInit {
 
   ngOnInit(): void {
     this.journalService.getUserJournal().subscribe((res)=> {
-      this.journalList = res.payload        
+      this.journalList = res.payload 
+      console.log(this.journalList)       
     })
 
     if(this.journalList?.length === 0 ) {

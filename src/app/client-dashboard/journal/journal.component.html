@@ -1,4 +1,4 @@
-<div class="lg:p-12 p-2 " *ngIf="isEmpty">
+<div class="lg:p-12 p-2 h-[90vh] overflow-y-scroll" *ngIf="journalList.length !== 0">
     <div class=" flex justify-end my-2">
         <button class="btn btn-active btn-primary" routerLink="/client-dashboard/create-journal">Add to journal  <i class="fa fa-plus text-2xl ml-2" aria-hidden="true"></i></button>
     </div>
@@ -32,7 +32,7 @@
             <button class="btn btn-active" (click)="exportSpreadSheet()">Export Excel</button>
         </div>
     </div>
-      <div class="w-full overflow-scroll bg-white rounded-xl">
+      <div class="w-full overflow-x-scroll bg-white rounded-xl">
         <table class="border-2 font-fira text-[14px] rounded-xl font-normal tracking-wide" id="trade">
             <thead>
                 <tr class="border-1" >
@@ -63,12 +63,13 @@
                     <td> {{journal?.stop_loss}} </td>
                     <td> {{journal?.take_profit}}</td>
                     <td> 234 </td>
-                    <td class="text-[white] bg-[green] "> Win </td>
+                    <td class="text-white" [ngClass]="journal?.profit_loss === 'profit'? 'bg-[green]' : 'bg-[red]'"> {{journal?.profit_loss === 'profit'? 'Win' : 'Loss'}} </td>
+                    
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
-<ng-container *ngIf="!isEmpty">
+<ng-container *ngIf="journalList.length === 0">
     <app-no-data displayText="You have no trade yet" (btnEvent)="navigate()" btnText="Add Trade"></app-no-data>
 </ng-container>
