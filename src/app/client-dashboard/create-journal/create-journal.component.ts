@@ -66,4 +66,8 @@ export class CreateJournalComponent implements OnInit {
       comment : new FormControl("", Validators.required),
     })
   }
+
+  navigate() {
+    this.router.navigate(["/client-dashboard/create-strategy"])
+  }
 }

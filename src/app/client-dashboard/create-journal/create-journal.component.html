@@ -152,3 +152,7 @@
         </form>
     </div>
 </div>
+
+<ng-container *ngIf="strategies.length === 0">
+    <app-no-data displayText="You have no strategy to apply yet,  kindly create a strategy to start!" (btnEvent)="navigate()" btnText="Create strategy"></app-no-data>
+</ng-container>
