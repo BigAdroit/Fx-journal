@@ -1,12 +1,100 @@
 <app-client-header></app-client-header>
 <app-hero text="fx journal calculator"></app-hero>
-<section class="mt-[-6rem] bg-transparent mx-16 py-4">
-    <div class="flex space-x-4 mb-3">
-        <div class="font-rubik font-bold text-white text-[14px] tracking-widest uppercase cursor-pointer hover:text-black"> pip calculator</div>
-        <div class="font-rubik font-bold text-white text-[14px] tracking-widest uppercase cursor-pointer"> pip calculator</div>
-        <div class="font-rubik font-bold text-white text-[14px] tracking-widest uppercase cursor-pointer"> pip calculator</div>
+<section class=" bg-transparent  md:px-8 py-4 bg-[#f6f7f8]">
+    <div class="md:flex">
+        <div class=" w-full p-3 md:w-[50%] mt-[-4rem]  bg-white md:p-8">
+            <form action="">
+                <div class="md:flex w-full md:items-center">
+                    <label for="" class="w-full md:w-[30%] block font-rubik font-bold text-[16px]"> Symbol</label>
+                    <select name="" id="" class="md:w-[70%] w-full border outline-none rounded-md p-4">
+                        <option value="eurusd"> EURUSD</option>
+                        <option value="eurusd"> EURUSD</option>
+                    </select>
+                </div>
+                <div class="md:flex w-full md:items-center my-4">
+                    <label for="" class="w-full md:w-[30%] block font-rubik font-bold text-[16px]"> Account Currency</label>
+                    <div class="flex">
+                        <div class="px-8 py-3 md:py-5 md:px-12  text-[16px] cursor-pointer border" (click)="onUsdSelect()" [ngClass]="isUsd? 'bg-[#f6f7f8]' : 'bg-white'">USD</div>
+                        <div class="px-8 py-3 md:py-5 md:px-12  text-[16px] cursor-pointer border" (click)="onEurSelect()" [ngClass]="isEur? 'bg-[#f6f7f8]' : 'bg-white'">EUR</div>
+
+                    </div>
+                </div>
+                <div class="md:flex w-full md:items-center my-4">
+                    <label for="" class="md:w-[30%] block font-rubik font-bold text-[16px]"> Direction</label>
+                    <div class="flex">
+                        <div class=" px-8 py-3 md:py-5 md:px-12  font-medium  text-[16px] cursor-pointer" (click)="isBuy()" [ngClass]="isBuyDirection ? 'bg-[green] text-white' :  'bg-[#f6f7f8] text-[grey]'">Buy</div>
+                        <div class="px-8 py-3 md:py-5 md:px-12 text-[16px] font-medium cursor-pointer  " (click)="isSell()" [ngClass]="isSellDirection ? 'bg-[#dc411d] text-white' :  'bg-[#f6f7f8] text-[grey]'">Sell</div>
+                    </div>
+                </div>
+                <div class="md:flex w-full md:items-center my-4">
+                    <label for="" class="md:w-[30%] font-rubik font-bold text-[16px]"> Volume, lots</label>
+                    <input type="number" min="0.01"  class="md:w-[70%] w-full border outline-none rounded-md p-4">
+                </div>
+
+                <div class="md:flex w-full md:items-center my-4">
+                    <label for="" class="md:w-[30%] block font-rubik font-bold text-[16px]"> Open Price</label>
+                    <input type="number" min="0.01"  class="md:w-[70%] w-full border outline-none rounded-md p-4">
+                </div>
+                <div class="md:flex w-full md:items-center my-4">
+                    <label for="" class="w-full md:w-[30%] block font-rubik font-bold text-[16px]">Close Price</label>
+                    <input type="number" min="0.01"  class="md:w-[70%] w-full border outline-none rounded-md p-4">
+                </div>
+
+                <div class="Md:flex Md:justify-end mt-8">
+                    <button class="w-full border hover:bg-[#d7edf8] border-blue px-12 py-3 md:py-5 text-[16px] font-bold"> Calculate</button>
+                </div>
+            </form>
+        </div>
+        <div class="md:w-[50%] p-8 bg-white md:p-16 ">
+            <div class="md:text-4xl text-xl text-center"> Calculation results </div>
+            <div class=" mt-16 md:px-16 ">
+                <div class="flex border-b p-2 justify-between items-center md:p-5 ">
+                    <div class="md:text-[18px] text-[16px] leading-6">Gross Profit</div>
+                    <div class="md:text-[18px] text-[16px] leading-6"> - </div>
+                </div>
+                <div class="flex border-b p-2 justify-between items-center md:p-5 my-4 md:my-12">
+                    <div class="md:text-[32px] text-[16px] leading-6 font-bold"> Profit </div>
+                    <div class="md:text-[32px] text-[16px] leading-6 font-bold"> - </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="bg-white h-32 w-full">
+
+    <div class=" p-3 md:p-12">
+        <div class="font-bold text-[#58587d]">This tool will help you analyse several market scenarios to develop your strategy for every possible case.</div>
+        <ol class="text-[#58587d] list-disc px-8 md:px-12">
+            <li>Specify all the order details</li>
+            <li>Press Calculate.</li>
+            <li>Leverage the outcome to enhance your strategy.</li>
+        </ol>
+
+        <div class="font-bold text-[#58587d] mt-4">How to specify the order details?</div>
+        <ol class="text-[#58587d] list-disc px-8 md:px-12">
+            <li>Symbol is the trading asset you are planning to Buy or Sell. Pick from currency pairs, indices, commodities, and digital assets.</li>
+            <li>the deposit currency of your trading account.</li>
+            <li>Period in days is the number of days you plan to keep your order open. We do not charge swap fees for holding orders open overnight on any of our platforms, so this field is for your better understanding.</li>
+            <li>Direction is whether you are planning to execute a Buy or a Sell order. Buy is when you go Long because of the rising quotes, whereas Sell order is when you go Short because of the falling quotes.</li>
+            <li>  Volume, lots is the volume of one order measured in standard lots. One lot is 100,000 units of the base currency. Mini lot equals 0.1 standard lots and constitutes 10,000 units of the base currency. Micro lot equals 0.01 lots and constitutes 1,000 units of the base currency. </li>
+            <li> Open price is the price you plan to open your order at.</li>
+            <li>  Close price is the price you plan to close your order at. </li>
+        </ol>
+
+        <div class="font-bold text-[#58587d] mt-4">How to calculate one pip?</div>
+        <ol class="text-[#58587d] list-disc px-8 md:px-12">
+            <li>for 5-digit currency pairs—by the 4th decimal (0.0001)</li>
+            <li>for 3-digit currency pairs and XAGUSD—by the 2nd decimal (0.01)</li>
+            <li>for XAUUSD, XPDUSD, XBRUSD, XTIUSD—by the 1st decimal (0.1)</li>
+            <li>for indices (exсept JPN225)—by the 1st decimal (0.1)</li>
+            <li>   for JPN225—by the 4th decimal (0.0001).</li>
+        </ol>
+
+        <div class=" text-[#58587d] mt-4">
+            Profit Calculator calculates your expected profit or loss as if you open your order on Monday. We've created the Profit Calculator for your education only, and it does not guarantee your profit.
+        </div>
+
+    </div>
+
+    <div>
 
     </div>
 </section>

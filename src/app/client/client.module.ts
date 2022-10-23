@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { MaterialModule } from '../material/material.module';
+import { FormsModule } from '@angular/forms';
 
 import { ClientRoutingModule } from './client-routing.module';
 import { HomeComponent } from './pages/home/home.component';
@@ -11,6 +12,7 @@ import { NewsComponent } from './pages/news/news.component';
 import { ReadNewsComponent } from './pages/read-news/read-news.component';
 import { ClaculatorsComponent } from './pages/claculators/claculators.component';
 import { EducationComponent } from './pages/education/education.component';
+import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
 
 
 
@@ -28,7 +30,9 @@ import { EducationComponent } from './pages/education/education.component';
     CommonModule,
     ClientRoutingModule,
     SharedModule,
-    MaterialModule
+    NgMultiSelectDropDownModule.forRoot(),
+    MaterialModule,
+    FormsModule
   ]
 })
 export class ClientModule { }

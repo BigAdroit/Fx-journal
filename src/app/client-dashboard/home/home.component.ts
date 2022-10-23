@@ -11,6 +11,7 @@ import { DashboardService } from 'src/app/service/data/dashboard.service';
 
 export class HomeComponent implements OnInit {
   displayData : any
+  showMonth : boolean = false
   months = [
     {month :"Jan", bgColor:"colorOne" , routerLink : "/client-dashboard/monthlyAnalysis/0"},
     {month :"Feb", bgColor:"colorOne", routerLink : "/client-dashboard/monthlyAnalysis/1" },

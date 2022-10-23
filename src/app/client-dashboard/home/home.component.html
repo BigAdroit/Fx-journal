@@ -32,88 +32,150 @@
         </div>
     </div>
     
-    <div class="flex flex-col lg:flex-row space-y-4 mx-2 my-2 lg:space-x-4 ">
-        <div class="w-full bg-white lg:w-[70%] rounded-lg px-8" data-aos="flip-up">
-            <div class="my-2 flex justify-between flex-wrap" > 
-                <div class=" {{month.bgColor}} text-white px-2 py-1 rounded text-[12px] font-fira cursor-pointer" routerLink="{{month.routerLink}}" *ngFor="let month of months" (click)="viewMonthAnalysis(month)"> {{month.month}}</div>
+    <div class="flex flex-col lg:flex-row space-y-4 my-2 lg:space-x-4 ">
+        <div class="w-full bg-white lg:w-[70%] rounded-lg px-2">
+            <div class="flex justify-end mt-4">
+                <div class=" w-[200px] md:w-[30%]">
+                    <label for="" class="font-[400] text-[14px]  "> Filter By Month </label>
+                    <div class="px-3 py-1 bg-[#ebe8e8] rounded-md text-base relative ">
+                        <div class="flex justify-between items-center cursor-pointer" (click)="showMonth =! showMonth">
+                            <div class="text-[14px] font-lato" >Select Month</div>
+                            <img src="assets/images/arrow-down.svg" alt="">
+                        </div>
+                        <div *ngIf="showMonth" class="absolute top-[2.2rem] p-2 bg-[#ebe8e8] w-full left-0 rounded shadow-lg h-[200px] overflow-y-auto">
+                            <div class="text-[grey] font-lato text-[12px] px-2 py-1 hover:bg-[white] rounded cursor-pointer" routerLink="{{month.routerLink}}" *ngFor="let month of months" (click)="viewMonthAnalysis(month)"> {{month.month}}</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <app-line-chart></app-line-chart>
         </div>
-        <div class="w-full  bg-white lg:w-[30%] rounded-lg px-4" data-aos="flip-down">
+        <div class="w-full  bg-white lg:w-[30%] rounded-lg px-4">
             <app-bar-chart></app-bar-chart>
         </div>
     </div>
-    
-    <div class="flex flex-col space-y-4 lg:flex-row mx-2 my-2 lg:space-x-4">
-        <div class="w-full bg-white lg:w-[70%] rounded-lg">
-            <div class="overflow-x-auto">
-                <table class="table w-full">
-                  <!-- head -->
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>Name</th>
-                      <th>Job</th>
-                      <th>Favorite Color</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <!-- row 1 -->
-                    <tr>
-                      <th>1</th>
-                      <td>Cy Ganderton</td>
-                      <td>Quality Control Specialist</td>
-                      <td>Blue</td>
-                    </tr>
-                    <!-- row 2 -->
-                    <tr class="active">
-                      <th>2</th>
-                      <td>Hart Hagerty</td>
-                      <td>Desktop Support Technician</td>
-                      <td>Purple</td>
-                    </tr>
-                    <!-- row 3 -->
-                    <tr>
-                      <th>3</th>
-                      <td>Brice Swyre</td>
-                      <td>Tax Accountant</td>
-                      <td>Red</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+
+    <div class="bg-deep-blue rounded-md p-4 mt-5">
+        <div class="text-white font-lato font-[500] text-xl md:text-[16px]"> Account Statistics</div>
+        <div class="grid grid-cols-2 md:grid-cols-5 mt-4">
+            <div class="text-[#d7edf8] text-center my-2">
+                <div class="text-base font-lato font-[400] leading-6">Average Win</div>
+                <div class="text-base font-lato font-[400] leading-6"> 456</div>
+            </div>
+
+            <div class="text-[#d7edf8] text-center my-2">
+                <div class="text-base font-lato font-[400] leading-6">Average Loss</div>
+                <div class="text-base font-lato font-[400] leading-6"> 456</div>
+            </div>
+
+            <div class="text-[#d7edf8] text-center my-2">
+                <div class="text-base font-lato font-[400] leading-6">Max Drawdown</div>
+                <div class="text-base font-lato font-[400] leading-6"> 456</div>
+            </div>
+
+            <div class="text-[#d7edf8] text-center my-2">
+                <div class="text-base font-lato font-[400] leading-6">Lagest Win</div>
+                <div class="text-base font-lato font-[400] leading-6"> 456</div>
+            </div>
+
+            <div class="text-[#d7edf8] text-center my-2">
+                <div class="text-base font-lato font-[400] leading-6">Lagest Loss</div>
+                <div class="text-base font-lato font-[400] leading-6"> 456</div>
+            </div>
+
+            <div class="text-[#d7edf8] text-center my-2">
+                <div class="text-base font-lato font-[400] leading-6">P/L Standard Deviation</div>
+                <div class="text-base font-lato font-[400] leading-6"> 456</div>
+            </div>
+
+            <div class="text-[#d7edf8] text-center my-2">
+                <div class="text-base font-lato font-[400] leading-6">Win/Loss Ratio</div>
+                <div class="text-base font-lato font-[400] leading-6"> 456</div>
+            </div>
+
+            <div class="text-[#d7edf8] text-center my-2">
+                <div class="text-base font-lato font-[400] leading-6">Avg. Return Per Trade</div>
+                <div class="text-base font-lato font-[400] leading-6"> 456</div>
+            </div>
+
+            <div class="text-[#d7edf8] text-center my-2">
+                <div class="text-base font-lato font-[400] leading-6">Max Consecutive Win</div>
+                <div class="text-base font-lato font-[400] leading-6"> 456</div>
+            </div>
+
+            <div class="text-[#d7edf8] text-center my-2">
+                <div class="text-base font-lato font-[400] leading-6">MAx Consecutive Loss</div>
+                <div class="text-base font-lato font-[400] leading-6"> 456</div>
+            </div>
+
         </div>
-        <div class="w-full bg-white h-[250px] lg:w-[30%] rounded-lg p-4">
-            <h1 class="font-fira font-bold  text-center my-2"> Major Currency Pair Strength</h1>
-           <div class="flex items-center space-x-4 w-full">
-                <p class="font-medium font-fira">USD </p>
-                <progress class="progress progress-success w-[80%]" value="70" max="100"></progress>
-           </div>
-            <div class="flex items-center space-x-4">
-                <p class="font-medium font-fira">CAD </p>
-                <progress class="progress progress-warning w-[80%]" value="40" max="100"></progress>
+    </div>
+
+    <div class="bg-white flex-cols md:flex my-4 rounded-md p-5">
+        <div class="w-full md:w-[40%]">
+            <div class="text-deep-blue font-lato font-[500] text-xl md:text-[16px]"> Trade Performance</div>
+            <div class="h-36">
+                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, quo nostrum! Accusantium, ratione animi eveniet dicta omnis nobis quas amet. </p>
             </div>
-            <div class="flex items-center space-x-4">
-                <p class="font-medium font-fira">AUD </p>
-                <progress class="progress progress-success w-[80%]" value="60" max="100"></progress>
-            </div>
-            <div class="flex items-center space-x-4">
-                <p class="font-medium font-fira"> JPY </p>
-                <progress class="progress progress-success w-[80%]" value="70" max="100"></progress>
-            </div>
-            <div class="flex items-center space-x-4">
-                <p class="font-medium font-fira">GBP </p>
-                <progress class="progress progress-success w-[80%]" value="80" max="100"></progress>
-            </div>
-            <div class="flex items-center space-x-4">
-                <p class="font-medium font-fira">EUR </p>
-                <progress class="progress progress-success w-[80%]" value="80" max="100"></progress>
-            </div>
-            <div class="flex items-center space-x-4">
-                <p class="font-medium font-fira">NZD </p>
-                <progress class="progress progress-success w-[80%]" value="80" max="100"></progress>
-            </div>
-            
         </div>
+
+        <div class="w-full md:w-[60%]">
+            <div class="text-deep-blue font-lato font-[500] text-xl md:text-[16px]"> Trade Performance</div>
+            <div class="h-36">
+                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, quo nostrum! Accusantium, ratione animi eveniet dicta omnis nobis quas amet. </p>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white flex-cols md:flex my-4 rounded-md p-5">
+        <div class="w-full md:w-[40%]">
+            <div class="text-deep-blue font-lato font-[500] text-xl md:text-[16px]"> Equity Curve</div>
+            <div class="h-36">
+                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, quo nostrum! Accusantium, ratione animi eveniet dicta omnis nobis quas amet. </p>
+            </div>
+        </div>
+
+        <div class="w-full md:w-[60%]">
+            <div class="text-deep-blue font-lato font-[500] text-xl md:text-[16px]"> Strategy Performance</div>
+            <div class="h-36">
+                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, quo nostrum! Accusantium, ratione animi eveniet dicta omnis nobis quas amet. </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white flex-cols md:flex my-4 rounded-md p-5">
+        <div class="w-full md:w-[60%]">
+            <div class="text-deep-blue font-lato font-[500] text-xl md:text-[16px]"> Trade Volume Per Currency Pair</div>
+            <div class="h-36">
+                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, quo nostrum! Accusantium, ratione animi eveniet dicta omnis nobis quas amet. </p>
+            </div>
+        </div>
+
+        <div class="w-full md:w-[40%]">
+            <div class="text-deep-blue font-lato font-[500] text-xl md:text-[16px]"> Total P&L by Currency Pair</div>
+            <div class="h-36">
+                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, quo nostrum! Accusantium, ratione animi eveniet dicta omnis nobis quas amet. </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white flex-cols md:flex my-4 rounded-md p-5">
+        <div class="w-full md:w-[40%]">
+            <div class="text-deep-blue font-lato font-[500] text-xl md:text-[16px]"> Trade Shorts/Longs </div>
+            <div class="h-36">
+                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, quo nostrum! Accusantium, ratione animi eveniet dicta omnis nobis quas amet. </p>
+            </div>
+        </div>
+
+        <div class="w-full md:w-[60%]">
+            <div class="text-deep-blue font-lato font-[500] text-xl md:text-[16px]"> Current Drawdown </div>
+            <div class="h-36">
+                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, quo nostrum! Accusantium, ratione animi eveniet dicta omnis nobis quas amet. </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white flex-cols md:flex my-4 rounded-md p-5">
+        <div class="text-deep-blue font-lato font-[500] text-xl md:text-[16px]"> Trade Per Trading Sessions </div>
+
     </div>
 </div>

@@ -18,6 +18,14 @@ export class HomeComponent implements OnInit {
     AOS.init({
       duration:3000
     })
+
+    const entry = 1.23450
+    const exit = 1.23455
+
+    const pipGenerated = entry - exit 
+    console.log(pipGenerated)
+    const profit_in_dollar = pipGenerated * 10000
+    console.log(profit_in_dollar)
   }
 
   onMouseOver(val:number) {
