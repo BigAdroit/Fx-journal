@@ -24,7 +24,7 @@ export class MonthlyCurrencyPerformanceComponent implements OnInit {
         console.log(res)
         const currencies = res.payload.currencyPairs
         const currenciesValue = res.payload.currencyPairTradeCount
-        console.log(this.month)
+        // console.log(this.month)
         
         const t_ctx = document.getElementById('currencyLineChart') as unknown as any;
         const ctx = t_ctx.getContext('2d');

@@ -44,6 +44,11 @@ import { EditDobComponent } from './ui/edit-dob/edit-dob.component';
 import { EditPhoneComponent } from './ui/edit-phone/edit-phone.component';
 import { EditAddressComponent } from './ui/edit-address/edit-address.component';
 import { UploadComponent } from './ui/upload/upload.component';
+import { LongShortAnalysisComponent } from './component/long-short-analysis/long-short-analysis.component';
+import { EquityAnalysisComponent } from './component/equity-analysis/equity-analysis.component';
+import { StrategyPerformanceComponent } from './component/strategy-performance/strategy-performance.component';
+import { TradePerCurrencyComponent } from './component/trade-per-currency/trade-per-currency.component';
+import { TradingSessionComponent } from './component/trading-session/trading-session.component';
 
 
 
@@ -84,7 +89,12 @@ import { UploadComponent } from './ui/upload/upload.component';
     EditDobComponent,
     EditPhoneComponent,
     EditAddressComponent,
-    UploadComponent
+    UploadComponent,
+    LongShortAnalysisComponent,
+    EquityAnalysisComponent,
+    StrategyPerformanceComponent,
+    TradePerCurrencyComponent,
+    TradingSessionComponent
   ],
   imports: [
     CommonModule,
@@ -116,9 +126,11 @@ import { UploadComponent } from './ui/upload/upload.component';
     LongShortMonthlyPerformanceComponent,
     TradingSessionMonthlyAnalysisComponent,
     NoDataComponent,
-    TimeframeMonthlyPerformanceComponent
-
-
+    TimeframeMonthlyPerformanceComponent,
+    StrategyPerformanceComponent,
+    TradingSessionComponent,
+    LongShortAnalysisComponent,
+    TradePerCurrencyComponent,
   ]
 })
 export class SharedModule { }

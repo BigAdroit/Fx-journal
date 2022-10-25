@@ -38,6 +38,7 @@ export class HomeComponent implements OnInit {
     this.dashboardService.dashboardData().subscribe((res)=> {
       // console.log(res)
       this.displayData = res.payload
+      console.log(res.payload)
     })
 
   }

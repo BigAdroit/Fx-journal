@@ -126,31 +126,27 @@
             </div>
         </div>
     </div>
-    <div class="bg-white flex-cols md:flex my-4 rounded-md p-5">
-        <div class="w-full md:w-[40%]">
+    <div class=" flex-cols md:flex gap-2 my-4">
+        <div class="bg-white w-full md:w-[40%] rounded-md p-2 rounded-md">
             <div class="text-deep-blue font-lato font-[500] text-xl md:text-[16px]"> Equity Curve</div>
             <div class="h-36">
                 <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, quo nostrum! Accusantium, ratione animi eveniet dicta omnis nobis quas amet. </p>
             </div>
         </div>
 
-        <div class="w-full md:w-[60%]">
-            <div class="text-deep-blue font-lato font-[500] text-xl md:text-[16px]"> Strategy Performance</div>
-            <div class="h-36">
-                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, quo nostrum! Accusantium, ratione animi eveniet dicta omnis nobis quas amet. </p>
+        <div class="bg-white w-full md:w-[60%] rounded-md p-2 rounded-md">
+            <div>
+                <app-strategy-performance></app-strategy-performance>
             </div>
         </div>
     </div>
 
-    <div class="bg-white flex-cols md:flex my-4 rounded-md p-5">
-        <div class="w-full md:w-[60%]">
-            <div class="text-deep-blue font-lato font-[500] text-xl md:text-[16px]"> Trade Volume Per Currency Pair</div>
-            <div class="h-36">
-                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, quo nostrum! Accusantium, ratione animi eveniet dicta omnis nobis quas amet. </p>
-            </div>
+    <div class=" flex-cols md:flex my-4 gap-2 rounded-md ">
+        <div class="bg-white w-full md:w-[60%] p-2 rounded-md">
+            <app-trade-per-currency></app-trade-per-currency>
         </div>
 
-        <div class="w-full md:w-[40%]">
+        <div class="bg-white w-full md:w-[40%] p-2 rounded-md">
             <div class="text-deep-blue font-lato font-[500] text-xl md:text-[16px]"> Total P&L by Currency Pair</div>
             <div class="h-36">
                 <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, quo nostrum! Accusantium, ratione animi eveniet dicta omnis nobis quas amet. </p>
@@ -158,15 +154,13 @@
         </div>
     </div>
 
-    <div class="bg-white flex-cols md:flex my-4 rounded-md p-5">
-        <div class="w-full md:w-[40%]">
+    <div class=" flex-cols  md:flex my-4 gap-3 rounded-md">
+        <div class="w-full bg-white md:w-[40%] p-2 rounded-md">
             <div class="text-deep-blue font-lato font-[500] text-xl md:text-[16px]"> Trade Shorts/Longs </div>
-            <div class="h-36">
-                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, quo nostrum! Accusantium, ratione animi eveniet dicta omnis nobis quas amet. </p>
-            </div>
+            <app-long-short-analysis></app-long-short-analysis>
         </div>
 
-        <div class="w-full md:w-[60%]">
+        <div class="w-full bg-white md:w-[60%] p-2 rounded-md">
             <div class="text-deep-blue font-lato font-[500] text-xl md:text-[16px]"> Current Drawdown </div>
             <div class="h-36">
                 <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, quo nostrum! Accusantium, ratione animi eveniet dicta omnis nobis quas amet. </p>
@@ -174,8 +168,9 @@
         </div>
     </div>
 
-    <div class="bg-white flex-cols md:flex my-4 rounded-md p-5">
-        <div class="text-deep-blue font-lato font-[500] text-xl md:text-[16px]"> Trade Per Trading Sessions </div>
-
+    <div class="bg-white  my-4 rounded-md p-5">
+        <div class="w-full">
+            <app-trading-session></app-trading-session>
+        </div>
     </div>
 </div>
